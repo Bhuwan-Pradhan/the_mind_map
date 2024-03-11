@@ -1,5 +1,4 @@
 * {
-    
     background-color: #faeab1;
 }
 
@@ -40,8 +39,8 @@
 .CaseImage {
     width: 30%;
 }
-.caseDescriptionDiv{
-}
+/* .caseDescriptionDiv{
+} */
 .AddNewDetailButtons {
     display: flex;
     flex-direction: column;
