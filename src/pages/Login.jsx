@@ -1,5 +1,5 @@
 import "../css/Login.css"
-export default function(){
+export default function Login(){
     return (
         <div class="mainpage">
         <form action="" class="login__form">

@@ -6,8 +6,6 @@ body{
   background-image: url("./assets/WhatsApp Image 2024-03-09 at 7.43.18 PM.jpeg");
   background-repeat: no-repeat;
   background-size:cover;
-}
-
-h1{
-  /* color:white; */
+  background-blend-mode: hard-light;
+  background-color: black;
 }
