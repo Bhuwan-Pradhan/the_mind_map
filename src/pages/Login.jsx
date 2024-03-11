@@ -4,8 +4,8 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { login } from "../services/authApi";
 
-export default function Login(){
-   const navigate = useNavigate();
+export default function Login() {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const [formData, setFormData] = useState({
     email: "",
@@ -26,13 +26,13 @@ export default function Login(){
     dispatch(login(email, password, navigate));
   };
 
-    return (
-        <div className="mainpage">
-        <form action="" className="login__form" onSubmit={handleOnSubmit}>
-            <h1 className="login__title">Login</h1>
+  return (
+    <div className="mainpage">
+      <form action="" className="login__form" onSubmit={handleOnSubmit}>
+        <h1 className="login__title">Login</h1>
 
-            <div className="login__inputs">
-            <div class="login__box">
+        <div className="login__inputs">
+          <div class="login__box">
             <input
               className="login__input"
               required
@@ -54,13 +54,13 @@ export default function Login(){
               onChange={handleOnChange} />
 
           </div>
-         </div>
-            <button type="submit" className="login__button">Login</button>
-
-            <div className="login__register">
-               Don't have an account? <a href="#">Register</a>
-            </div>
-         </form>
         </div>
-    )
+        <button type="submit" className="login__button">Login</button>
+
+        <div className="login__register">
+          Don't have an account? <a href="/signup">Register</a>
+        </div>
+      </form>
+    </div>
+  )
 }

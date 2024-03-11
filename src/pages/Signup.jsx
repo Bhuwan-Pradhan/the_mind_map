@@ -108,7 +108,7 @@ export default function Signup() {
         <button type="submit" class="signup__button">Signup</button>
 
         <div class="login__register">
-          Already have an account? <a href="#">Login</a>
+          Already have an account? <a href="/login">Login</a>
         </div>
       </form>
     </div>
