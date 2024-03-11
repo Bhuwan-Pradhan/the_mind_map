@@ -1,11 +1,11 @@
 import "../css/Login.css"
 export default function Login(){
     return (
-        <div class="mainpage">
-        <form action="" class="login__form">
+        <div className="mainpage">
+        <form action="" className="login__form">
             <h1 class="login__title">Login</h1>
 
-            <div class="login__inputs">
+            <div className="login__inputs">
                <div class="login__box">
                   <input type="email" placeholder="Email ID" required class="login__input"/>
                   <i class="ri-mail-fill"></i>
