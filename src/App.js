@@ -1,11 +1,8 @@
 import { Route, Routes } from "react-router-dom";
 import { useSelector } from "react-redux";
 import './App.css';
-import CaseContainerHome from './components/CaseContainerHome';
-import Login from './pages/Login';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
-
 import HomePage from "./pages/HomePage";
 
 function App() {
