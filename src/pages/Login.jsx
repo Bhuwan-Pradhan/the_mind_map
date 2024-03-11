@@ -1,34 +1,34 @@
 import "../css/Login.css"
 export default function Login(){
     return (
-        <div class="mainpage">
-        <form action="" class="login__form">
-            <h1 class="login__title">Login</h1>
+        <div className="mainpage">
+        <form action="" className="login__form">
+            <h1 className="login__title">Login</h1>
 
-            <div class="login__inputs">
-               <div class="login__box">
-                  <input type="email" placeholder="Email ID" required class="login__input"/>
-                  <i class="ri-mail-fill"></i>
+            <div className="login__inputs">
+               <div className="login__box">
+                  <input type="email" placeholder="Email ID" required className="login__input"/>
+                  <i className="ri-mail-fill"></i>
                </div>
 
-               <div class="login__box">
-                  <input type="password" placeholder="Password" required class="login__input"/>
-                  <i class="ri-lock-2-fill"></i>
+               <div className="login__box">
+                  <input type="password" placeholder="Password" required className="login__input"/>
+                  <i className="ri-lock-2-fill"></i>
                </div>
             </div>
 
-            <div class="login__check">
-               <div class="login__check-box">
-                  <input type="checkbox" class="login__check-input" id="user-check"/>
-                  <label for="user-check" class="login__check-label">Remember me</label>
+            <div className="login__check">
+               <div className="login__check-box">
+                  <input type="checkbox" className="login__check-input" id="user-check"/>
+                  <label for="user-check" className="login__check-label">Remember me</label>
                </div>
 
-               <a href="#" class="login__forgot">Forgot Password?</a>
+               <a href="#" className="login__forgot">Forgot Password?</a>
             </div>
 
-            <button type="submit" class="login__button">Login</button>
+            <button type="submit" className="login__button">Login</button>
 
-            <div class="login__register">
+            <div className="login__register">
                Don't have an account? <a href="#">Register</a>
             </div>
          </form>

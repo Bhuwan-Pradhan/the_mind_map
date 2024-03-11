@@ -29,6 +29,14 @@
     padding-inline: 1.25rem;
     border-radius: 4rem;
     margin-bottom: 1.5rem;
+    background-color: transparent;
+  }
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+      transition: background-color 5000s ease-in-out 0s;
+      -webkit-text-fill-color: white;
   }
   .login__input{
     border:none;
@@ -37,6 +45,7 @@
     background: none;
     color:white;
     padding-block: 1rem;
+    background-color: transparent;
   }
   .login__input::placeholder {
     color: white;
