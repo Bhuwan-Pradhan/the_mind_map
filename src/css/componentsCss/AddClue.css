@@ -1,0 +1,44 @@
+.AddClueOuter {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 25vw;
+    width: 50vw;
+    height: 80vh;
+    backdrop-filter: blur(12px);
+  }
+  
+  .container {
+    text-align: center;
+  }
+  
+  input {
+    margin-bottom: 10px;
+    padding: 8px;
+  }
+  
+  #upload-container {
+    margin-top: 20px;
+  }
+  
+  #dropzone {
+    border: 2px dashed #cccccc;
+    border-radius: 4px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  #preview {
+    max-width: 100%;
+    max-height: 200px;
+    margin-top: 10px;
+  }
+  
+  #dropzone:hover {
+    background-color: #f2f2f2;
+  }
+  
