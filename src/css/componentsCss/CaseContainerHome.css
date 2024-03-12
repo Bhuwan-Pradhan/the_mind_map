@@ -1,16 +1,22 @@
-* {
+/* * {
     background-color: #faeab1;
-}
+} */
 
 #OuterCaseContainer {
-    display: flex;
+    /* display: flex;
     width: 100vw;
     height: 100vh;
-    justify-content: center;
+    justify-content: center; */
+    margin:1rem 8rem;
+    display: flex;
+    flex-direction: column;
+
+    /* background-color: red; */
+    gap:3rem;
 }
 
 .CaseContainerMainOuter {
-    display: flex;
+    /* display: flex;
     
     margin: 10px;
     padding: 10px;
@@ -20,33 +26,79 @@
     border: 2px solid black;
     
     border-radius: 5px;
+    backdrop-filter: blur(12px); */
+    background-color: hsla(0, 0%, 100%, .01);
+    border: 2px solid hsla(0, 0%, 100%, .5);
+    border-radius: 1rem;
     backdrop-filter: blur(12px);
+    display: flex;
+    height:30vh;
+    padding: 1rem;
+    color: white;
+    border-radius: 1rem;
 }
 
 .CaseBrief {
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     background-color: red;
     
     height: 100%;
+    width: 50%; */
+    /* background-color: yellow; */
     width: 50%;
+    margin-right: 10%;
 }
 
 .CaseNameDiv {
-    background-color: green;
+    /* background-color: green; */
+    /* background-color: white; */
+    font-size: 2.5vw;
+    max-height: 12vh;
+    overflow-y: scroll;
 }
-
+.CaseDescriptionDiv{
+    padding-top: 0.5rem;
+}
+.CaseDescriptionDiv p{
+    overflow-y: scroll;
+    margin-bottom: 0px;
+    max-height: 18vh;
+}
+::-webkit-scrollbar {
+    display: none;
+    width: 16px;
+}
 .CaseImage {
-    width: 30%;
+    /* width: 30%; */
+    /* background-color: aqua; */
+    height: 100%;
+    margin-right: 10%;
 }
-/* .caseDescriptionDiv{
-} */
+.CaseImage img{
+    height: 100%;
+}
 .AddNewDetailButtons {
+    /* display: flex;
+    flex-direction: column; */
+    /* background-color: blue; */
+    width:10%;
     display: flex;
     flex-direction: column;
-    
+    justify-content: space-evenly;
 }
-/* #OuterCaseContainer{
-    display: flex;
-    flex-direction: column;
-} */
+.AddNewDetailButton{
+    width:100%;
+    padding:0.8rem 0.5rem;
+    /* margin-bottom: 1.5rem; */
+    font-weight: 600;
+    font-size: 1rem;
+    background-color: white;
+    border: none;
+    border-radius: 6px;
+    color: black;
+}
+.AddNewDetailButton:hover{
+    background-color: black;
+    color: white;
+}
