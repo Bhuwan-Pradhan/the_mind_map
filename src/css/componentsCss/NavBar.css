@@ -2,10 +2,35 @@
 
 .navbar {
     backdrop-filter: blur(12px);
+    /* background-color: green; */
+    display: flex;
     overflow: hidden;
     color: white;
+    justify-content: space-between;
+    form{
+      margin-top: 10px;
+      display: flex;
+      background-color: #FFFFFF;
+      height: 5.5vh;
+      border-radius: 10px;
+      outline: none;
+  border: none;
+    }
 }
-
+.srch{
+  /* background-color: #FF4742; */
+  padding-top: 5px;
+  color: grey;
+  outline: none;
+  border: none;
+}
+.searchBar{
+  
+  margin-top: 1vh;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}
 /* .navbar img {
 height: 50px;
 margin-left: 10px;
@@ -13,7 +38,7 @@ margin-top: 5px;
 } */
 
 .navbar-right {
-    float: right;
+    /* float: right; */
     margin-right: 10px;
     line-height: 60px;
 }

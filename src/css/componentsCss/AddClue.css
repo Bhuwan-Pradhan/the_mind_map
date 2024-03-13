@@ -1,44 +1,80 @@
 .AddClueOuter {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 25vw;
-    width: 50vw;
-    height: 80vh;
-    backdrop-filter: blur(12px);
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 25vw;
+  width: 50vw;
+  height: 80vh;
+  backdrop-filter: blur(12px);
+}
+
+.container {
+  /* text-align: center; */
+  /* background-color: #f2f2f2; */
+  display: flex;
+  justify-content: space-around;
+  height: 70vh;
+  width: 45vw;
+}
+.writecontainer{
+  /* background-color: aqua; */
+  display: flex;
+  flex-direction: column;
+  gap:7vh;
+  width:25vw;
+  input{
+    border-radius: 3px;
+    outline: none;
+    border:1px solid white;
+    width:95%;
   }
+}
+input {
+  margin-bottom: 10px;
+  padding: 8px;
+}
+
+
+label{
+  position: relative;
+}
+.Title{
+  font-size: 1.2vw;
+}
+
+.ClueDescriptionBox {
+  width: 100%;
+  height: 30vh;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  /* background-color: #f8f8f8; */
+  font-size: 16px;
+  resize: none;
+}
+
+
+#dropzone {
+  border: 2px dashed #cccccc;
+  border-radius: 4px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  height: 50vh;
+  /* background-color: aqua; */
+}
+
+#preview {
   
-  .container {
-    text-align: center;
-  }
-  
-  input {
-    margin-bottom: 10px;
-    padding: 8px;
-  }
-  
-  #upload-container {
-    margin-top: 20px;
-  }
-  
-  #dropzone {
-    border: 2px dashed #cccccc;
-    border-radius: 4px;
-    padding: 20px;
-    text-align: center;
-    cursor: pointer;
-  }
-  
-  #preview {
-    max-width: 100%;
-    max-height: 200px;
-    margin-top: 10px;
-  }
-  
-  #dropzone:hover {
-    background-color: #f2f2f2;
-  }
-  
+  max-width: 100%;
+  max-height: 200px;
+  margin-top: 10px;
+}
+
+#dropzone:hover {
+  background-color: #f2f2f2;
+}

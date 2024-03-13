@@ -24,6 +24,7 @@ export default function AddClue() {
         <div className="AddClueOuter">
         <form>
             <div className="container">
+                <div className="writecontainer">
                     <label>
                         <div className="Title">Enter Clue</div>
                         <input
@@ -38,14 +39,11 @@ export default function AddClue() {
 
                     <label>
                         <div className="Title">Enter Clue Description</div>
-                        <input
-                            required
-                            type="text"
-                            name="ClueDescription"
-                            placeholder="Enter clue description"
-                        // value={ClueDescription}
-                        // onChange={handleOnChange}
-                        />
+                        <textarea
+                            className="ClueDescriptionBox"
+                            name="CaseDescription"
+                            placeholder="Enter case description">
+                        </textarea>
                     </label>
 
                     <label>
@@ -58,18 +56,20 @@ export default function AddClue() {
                             <option value="Observation">Observation</option>
                         </select>
                     </label>
+                </div>    
                     <div id="upload-container">
                         <label>Upload Image:</label>
                         <div {...getRootProps()} id="dropzone">
                             <input {...getInputProps()} />
                             <p>Drag & drop an image here, or click to select one</p>
-                        </div>
-                        {image && (
+                            {image && (
                             <div>
                                 <p>Image Preview:</p>
                                 <img src={image} alt="Preview" id="preview" />
                             </div>
                         )}
+                        </div>
+                        
                     </div>
                     {/* <button type="submit">Submit</button> */}
             </div>
