@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const userRoutes = require("./routes/UserRoutes");
+const caseRoutes = require("./routes/CaseRoutes");
 const database = require("./config/database");
 const cookieParser = require("cookie-parser");
 const dotenv = require("dotenv");
@@ -36,6 +37,7 @@ app.use(cookieParser());
 
 
 app.use("/api/auth", userRoutes);
+app.use("/api/case", caseRoutes);
 
 
 //default route
