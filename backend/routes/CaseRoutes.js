@@ -6,8 +6,11 @@ const {
     addCase,
 } = require("../controllers/NewCase");
 const {
-    addClue,
+    addClue
 } = require("../controllers/NewClue");
+const {
+    addPerson,
+} = require("../controllers/NewPerson")
 
 
 const {auth} = require("../middlewares/auth");
@@ -15,5 +18,6 @@ const {auth} = require("../middlewares/auth");
 //Route for user signup
 router.post("/addCase",auth, addCase);
 router.post("/addClue", addClue);
+router.post("/addPerson", addPerson);
 
 module.exports = router
