@@ -5,11 +5,15 @@ const router = express.Router();
 const {
     addCase,
 } = require("../controllers/NewCase");
+const {
+    addClue,
+} = require("../controllers/NewClue");
 
 
 const {auth} = require("../middlewares/auth");
 
 //Route for user signup
 router.post("/addCase",auth, addCase);
+router.post("/addClue", addClue);
 
 module.exports = router
