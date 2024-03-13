@@ -1,0 +1,31 @@
+  .TimeLine {
+    position: relative;
+    max-width: 1200px;
+    margin: 50px auto;
+  }
+  .TimeLine::before {
+    content: '';
+    overflow: scroll;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background-color: #333;
+    transform: translateX(-50%);
+  }
+  Card {
+    position: relative;
+    padding: 20px;
+    background-color: #f9f9f9;
+    margin: 20px 0;
+    border-radius: 5px;
+  }
+  Card:nth-child(even) {
+    margin-left: 40px;
+  }
+  @media (max-width: 768px) {
+    Card:nth-child(even) {
+      margin-left: 0;
+    }
+  }
