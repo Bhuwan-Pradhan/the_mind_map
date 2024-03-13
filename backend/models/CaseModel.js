@@ -26,6 +26,14 @@ const caseSchema = new mongoose.Schema(
 				ref: "person",
 			},
 		],
+		image: {
+			type: String,
+			required: true,
+		},
+		place: {
+			type: String,
+			required: true,
+		}
 
 
 

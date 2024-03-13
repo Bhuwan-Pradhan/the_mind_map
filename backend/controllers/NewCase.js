@@ -1,13 +1,22 @@
 const Case = require("../models/CaseModel");
 const User = require("../models/UserModel");
+const { uploadMediaToCloudinary } = require('./FileUploader');
 exports.addCase = async (req, res) => {
     try {
         // fetch data from request body 
-        const { name, description } = req.body;
-        const user = req.user.id
-        // create comment object
+        const { name, description,place } = req.body;
+        const user = req.user.id;
+        const displayFile = req.files.displayFile;
+        const media_type = req.files.displayFile.mimetype;
+        console.log(media_type)
+        const file = await uploadMediaToCloudinary(displayFile, process.env.FOLDER_NAME, media_type);
+      
         const newCase = new Case({
-            name, description
+            name: name, 
+            description: description,
+            place: place,
+            image: file.secure_url
+            
         });
 
         // save the new comment object into the db 
