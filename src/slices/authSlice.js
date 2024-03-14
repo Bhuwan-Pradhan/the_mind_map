@@ -1,10 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
+import Cookies from "universal-cookie";
 
+
+const cookie= new Cookies();
 const initialState = {
   signupData: null,
   loading: false,
-  token: localStorage.getItem("token") ? JSON.parse(localStorage.getItem("token")) : null,
-  user: localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")) : null,
+  token: cookie.get("token") ? cookie.get("token") : null,
+  user: cookie.get("user") ? cookie.get("user") : null,
 };
 
 const authSlice = createSlice({

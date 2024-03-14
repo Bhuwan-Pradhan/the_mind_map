@@ -3,6 +3,7 @@ import { toast } from "react-hot-toast";
 import { setLoading, setToken, setUser } from "../slices/authSlice";
 import { apiConnector } from "./apiConnector";
 import { endpoints } from "../utils/api";
+import Cookies  from 'universal-cookie';
 
 const {
   SIGNUP_API,
@@ -66,9 +67,9 @@ export function login(email, password, navigate) {
       dispatch(setToken(response.data.token));
       dispatch(setUser(response.data.user));
 
-
-      localStorage.setItem("token", JSON.stringify(response.data.token))
-      localStorage.setItem("user", JSON.stringify(response.data.user))
+      const cookies = new Cookies();
+      cookies.set("token", response.data.token);
+      cookies.set("user", response.data.user);
       navigate("/")
     } catch (error) {
       console.log("LOGIN API ERROR............", error)

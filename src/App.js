@@ -4,10 +4,11 @@ import './App.css';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import HomePage from "./pages/HomePage";
+import AddCase from "./components/AddCase";
 
 function App() {
   const { token } = useSelector((state) => state.auth);
-  if(token){
+  if (token) {
     return (
       <div className="App">
         <Routes>
@@ -15,15 +16,16 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
           <Route path="/home" element={<HomePage />} />
+          <Route path="/addCase" element={<AddCase />} />
         </Routes>
       </div>
     );
   }
-  else{
+  else {
     return (
       <div className="App">
         <Routes>
-          <Route path="/" element={<Login/>} />
+          <Route path="/" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
           <Route path="/home" element={<HomePage />} />
@@ -31,7 +33,7 @@ function App() {
       </div>
     );
   }
-  
+
 }
 
 export default App;
