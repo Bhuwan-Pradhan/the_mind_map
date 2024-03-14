@@ -4,7 +4,10 @@ const mongoose = require("mongoose");
 
 const clueSchema = new mongoose.Schema(
 	{
-		// Define the name field with type String, required, and trimmed
+		case: {
+			type: String,
+			required: true,
+		},
 		name: {
 			type: String,
 			required: true,

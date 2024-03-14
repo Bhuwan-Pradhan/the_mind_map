@@ -10,14 +10,18 @@ const {
 } = require("../controllers/NewClue");
 const {
     addPerson,
-} = require("../controllers/NewPerson")
+} = require("../controllers/NewPerson");
+const {
+    getCaseById,
+} = require("../controllers/GetAll");
 
 
-const {auth} = require("../middlewares/auth");
+const { auth } = require("../middlewares/auth");
 
 //Route for user signup
-router.post("/addCase",auth, addCase);
+router.post("/addCase", auth, addCase);
 router.post("/addClue", addClue);
 router.post("/addPerson", addPerson);
+router.get("/getCase", auth, getCaseById);
 
 module.exports = router

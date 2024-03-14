@@ -5,6 +5,11 @@ const mongoose = require("mongoose");
 const caseSchema = new mongoose.Schema(
 	{
 		// Define the name field with type String, required, and trimmed
+		user: {
+			type: mongoose.Schema.Types.ObjectId,
+			ref: "user",
+			required: true,
+		},
 		name: {
 			type: String,
 			required: true,
