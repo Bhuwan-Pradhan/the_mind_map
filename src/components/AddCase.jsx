@@ -1,5 +1,4 @@
 import "../css/componentsCss/AddCase.css"
-import Cookies  from 'universal-cookie';
 import React, { useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { useDispatch, useSelector } from "react-redux";
