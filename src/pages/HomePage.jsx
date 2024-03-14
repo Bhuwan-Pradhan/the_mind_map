@@ -26,7 +26,8 @@ export default function HomePage() {
             <a href="/addCase" className="addCase" >Add Case</a>
             <NavBar />
             {caseData?.data.map((element) => (
-                <CaseContainerHome id={element} name={element.name} />
+                <CaseContainerHome id={element} name={element.name} description={element.description} place={element.place} image={element.image} time={element.
+                    createdAt}/>
             ))}
         </div>
     );
