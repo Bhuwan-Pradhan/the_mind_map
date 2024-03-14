@@ -10,6 +10,7 @@ exports.addPerson = async (req, res) => {
         console.log(media_type)
         const file = await uploadMediaToCloudinary(displayFile, process.env.FOLDER_NAME, media_type);
         const person = new Person({
+            case: caseId,
             name: name,
             description: description,
             profession: profession,

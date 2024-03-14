@@ -5,6 +5,7 @@ import { caseEndpoints } from "../utils/api";
 
 const {
   ADDCASE_API,
+  GETCASE_API,
 } = caseEndpoints
 
 
@@ -36,5 +37,25 @@ navigate("/")
     toast.dismiss(toastId)
   }
 }
+
+
+export const getUserCase = async (token) => {
+  let result = null
+  try {
+    const response = await apiConnector("GET", GETCASE_API,token,{
+      Authorization: `Bearer ${token}`,
+    })
+    if (!response?.data?.success) {
+      throw new Error("Could Not Fetch cases")
+    }
+    result = response?.data
+  } catch (error) {
+    console.log("GET_USER_CASE_API API ERROR............", error)
+    toast.error(error.message)
+  }
+  return result;
+}
+
+
 
 

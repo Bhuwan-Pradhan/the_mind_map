@@ -12,6 +12,7 @@ exports.addCase = async (req, res) => {
         const file = await uploadMediaToCloudinary(displayFile, process.env.FOLDER_NAME, media_type);
       
         const newCase = new Case({
+            user: user,
             name: name, 
             description: description,
             place: place,
