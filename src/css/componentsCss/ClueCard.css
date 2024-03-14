@@ -1,66 +1,67 @@
-* {
-  scroll-behavior: smooth;
+.ClueCardDiv {
+	background-color: rgba(255, 255, 255, 0.5);
+	width: calc(100% - calc(4.8rem * 2));
+	max-width: 480px;
+	padding: 2.8rem;
+	margin: 2.2rem;
+	display: flex;
+	flex-direction: column;
+	border-radius: 1.7rem;
+	box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2);
+	transform: translateY(-1rem);
+	backdrop-filter: blur(1.5rem);
 }
 
-.ClueDisplay {
-    display: flex;
-    flex-wrap: wrap;
-    color: aliceblue;
-    justify-content: space-evenly;
+.ClueTitle {
+	font-size: 1.75rem;
+	font-weight: bold;
+	height: 2.8rem;
+	margin-bottom: 0.5rem;
 }
-.ClueCardContainer {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 16px;
-    margin: 16px;
-    cursor: pointer;
-    /* backdrop-filter: blur(12px); */
-    transition: box-shadow 0.3s ease-in-out;
-    width: 100%;
-    box-sizing: border-box;
-  }
-  
-  /* Media query for desktop screens */
-  @media (min-width: 768px) {
-    .ClueCardContainer {
-      width: calc(33.33% - 32px); /* Adjust the width for 3 cards in a row with some margin */
-      max-width: 300px; /* Set a maximum width for each card */
-    }
-  }
-  
-  .ClueCardContainer:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .ClueCardHeader {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-  
-  .ClueCardTitle {
-    margin: 0;
-    font-size: 1.5rem;
-  }
-  
-  .card-date {
-    margin: 0;
-  }
-  
-  .ClueImage {
-    width: 100%;
-    max-height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
-  }
-  
-  .ClueDescription {
-    font-size: 1rem;
-    max-height: 20vh;
-    /* display: flex; */
-    overflow: scroll;
-    scrollbar-width: none;
-  }
-  
+
+.ClueImage {
+	width: 100%;
+	margin-bottom: 1.5rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	border-radius: 1.5rem;
+}
+
+.ClueImage img {
+	height: 320px;
+	display: block;
+}
+
+.ClueDescription {
+	color: rgba(255, 255, 255, 0.7);
+	background-color: rgba(0, 0, 0, 0.5);
+	width: calc(100% - calc(2.8rem * 2));
+	height: 320px;
+	line-height: 1.75rem;
+	padding: 2.5rem;
+	position: absolute;
+	top: calc(2.8rem + 3.3rem);
+	left: 2.8rem;
+	overflow: auto;
+	opacity: 0;
+	border-radius: 1.5rem;
+	transition: opacity 200ms ease-out;
+  scrollbar-width: none;
+}
+
+.ClueImage:hover + .ClueDescription,
+.ClueDescription:hover {
+	opacity: 1;
+}
+
+.ClueCategory {
+	font-size: 1.4rem;
+	font-weight: bold;
+	margin-bottom: 1.5rem;
+}
+
+.ClueDate {
+	margin-bottom: 0.5rem;
+}
