@@ -1,0 +1,121 @@
+.PersonContainer {
+    font-size: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: #e2efff;
+    /* min-height: 100vh; */
+    font-family: consolas;
+}
+
+.PersonCard {
+    margin-left: 2%;
+    margin-right: 2%;
+    position: relative;
+    cursor: pointer;
+}
+
+.PersonCard .PersonCardOuter {
+    position: relative;
+    background: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    transform: translateY(150px);
+    width: 300px;
+    height: 300px;
+    transition: 0.5s;
+}
+
+.PersonCard:hover .PersonCardOuter {
+    background: #ff0057;
+    transform: translateY(0);
+}
+
+.content {
+    opacity: 1;
+    transition: 0.5s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.PersonCard:hover .content {
+    opacity: 1;
+}
+
+.content img {
+    max-width: 100px;
+}
+
+.content h3 {
+    margin: 10px 0 0;
+    padding: 0;
+    color: #fff;
+    align-items: center;
+    font-size: 1.5em;
+}
+
+.PersonCardInner {
+    position: relative;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+    transform: translateY(-150px);
+    width: 300px;
+    height: 300px;
+      transition: 0.5s;
+}
+
+.PersonCard:hover .PersonCardInner {
+    transform: translateY(0);
+      transition: 0.5s;
+}
+
+.PersonCard .PersonCardInner .content p {
+    margin: 0;
+    padding: 0;
+}
+
+.AddPerson{
+    position: fixed;
+    bottom: 9vh;
+    right: 5vw;
+    z-index: 20;
+    background: #FF4742;
+    border: 1px solid #FF4742;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 16px;
+    min-height: 50px;
+    min-width: 8rem;
+    outline: 0;
+    padding-top:12px;
+    text-align: center;
+    text-rendering: geometricprecision;
+    text-transform: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+}
+.AddPerson:hover,
+.AddPerson:active {
+  background-color: #f3231c;
+}

@@ -5,6 +5,9 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import HomePage from "./pages/HomePage";
 import AddCase from "./components/AddCase";
+import PersonHomePage from "./pages/PersonHomePage";
+import ClueHomePage from "./pages/ClueHomePage";
+
 
 function App() {
   const { token } = useSelector((state) => state.auth);
@@ -16,6 +19,8 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
           <Route path="/home" element={<HomePage />} />
+          <Route path="/person" element={<PersonHomePage />} />
+          <Route path="/clue" element={<ClueHomePage />} />
           <Route path="/addCase" element={<AddCase />} />
         </Routes>
       </div>
