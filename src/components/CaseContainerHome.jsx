@@ -2,7 +2,7 @@ import "../css/componentsCss/CaseContainerHome.css"
 export default function CaseContainerHome() {
     return (
         <div id="OuterCaseContainer">
-            <button className="addCase">Add Case</button>
+            <a href="/addCase" className="addCase" >Add Case</a>
             <section class="card-section">
         <div class="card">
             <div class="flip-card">

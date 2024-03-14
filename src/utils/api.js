@@ -6,4 +6,12 @@ export const endpoints = {
   LOGIN_API: BASE_URL + "/auth/login",
 }
 
+// CASE ENDPOINTS
+export const caseEndpoints = {
+  ADDCASE_API: BASE_URL + "/case/addCase",
+  ADDCLUE_API: BASE_URL + "/case/addClue",
+  ADDPERSON_API: BASE_URL + "/case/addPerson",
+}
+
+
  
