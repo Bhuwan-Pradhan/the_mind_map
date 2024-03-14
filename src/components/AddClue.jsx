@@ -58,7 +58,7 @@ export default function AddClue() {
                     </label>
                 </div>    
                     <div id="upload-container">
-                        <label>Upload Image:</label>
+                        <label className="Title">Upload Image:</label>
                         <div {...getRootProps()} id="dropzone">
                             <input {...getInputProps()} />
                             <p>Drag & drop an image here, or click to select one</p>
@@ -71,8 +71,8 @@ export default function AddClue() {
                         </div>
                         
                     </div>
-                    {/* <button type="submit">Submit</button> */}
             </div>
+            <button type="submit">Submit</button>
         </form>
         </div>
     );

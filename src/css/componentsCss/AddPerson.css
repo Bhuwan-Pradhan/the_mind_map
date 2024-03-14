@@ -1,79 +1,86 @@
 .AddPersonOuter {
-  font-family: 'Arial', sans-serif;
-  margin: 0;
-  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 25vw;
-  width: 50vw;
-  height: 80vh;
-  backdrop-filter: blur(12px);
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.AddPersonOuter form {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
 }
 
 .container {
-  /* background-color: #f2f2f2; */
-  display: flex;
-  justify-content: space-around;
-  height: 70vh;
-  width: 45vw;
-}
-.writecontainerPerson{
-  /* background-color: aqua; */
-  display: flex;
-  flex-direction: column;
-  gap:4vh;
-  width:25vw;
-  input{
-    border-radius: 3px;
-    outline: none;
-    border:1px solid white;
-    width:95%;
-  }
-}
-input {
-  margin-bottom: 10px;
-  padding: 8px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  max-width: 90%;
 }
 
 
-label{
-  position: relative;
-}
-.Title{
-  font-size: 1.2vw;
+.Title {
+  font-weight: bold;
+  margin-bottom: 5px;
 }
 
-.CaseDescriptionBox {
-  width: 100%;
-  height: 30vh;
-  padding: 12px 20px;
+input[type='text'],
+textarea {
+  width: 90%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #000000;
+  border-radius: 5px;
   box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  /* background-color: #f8f8f8; */
-  font-size: 16px;
-  resize: none;
 }
 
+textarea {
+  resize: none;
+  height: 100px;
+}
+
+#upload-container {
+  margin-bottom: 20px;
+}
 
 #dropzone {
-  border: 2px dashed #cccccc;
-  border-radius: 4px;
+  border: 2px dashed #ccc;
   padding: 20px;
   text-align: center;
   cursor: pointer;
-  height: 50vh;
-  /* background-color: aqua; */
+}
+
+#dropzone p {
+  margin: 0;
 }
 
 #preview {
-  
   max-width: 100%;
-  max-height: 200px;
+  height: auto;
   margin-top: 10px;
 }
 
-#dropzone:hover {
-  background-color: #f2f2f2;
+button[type='submit'] {
+  background-color: #4caf50;
+  width: 93%;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type='submit']:hover {
+  background-color: #45a049;
+}
+
+.writecontainer  input[type=text] {
+  border: 1px solid black;
+  border-radius: 4px;
+  width: 90%;
 }
