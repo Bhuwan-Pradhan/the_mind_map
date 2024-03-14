@@ -15,15 +15,16 @@
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
     position: relative;
-    margin:1rem 8rem;
+    margin:1rem 18rem;
+    /* background-color: red; */
     display: flex;
-    gap:3rem;
+    /* gap:3rem; */
   }
 .addCase{
     position: fixed;
     bottom: 9vh;
     right: 5vw;
-    z-index: 2;
+    z-index: 20;
     background: #FF4742;
     border: 1px solid #FF4742;
     border-radius: 6px;
@@ -191,7 +192,8 @@
   align-items: center;
   display: flex;
   height: 100%;
-  /* justify-content: space-around; */
+  /* background-color: #42a4ff; */
+  justify-content: space-around;
   flex-wrap: wrap;
   gap:3rem;
   width: 100%;
