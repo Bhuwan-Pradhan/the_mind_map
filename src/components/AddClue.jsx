@@ -1,4 +1,4 @@
-import "../css/componentsCss/AddCase.css"
+import "../css/componentsCss/AddClue.css"
 import React, { useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { useDispatch, useSelector } from "react-redux";
@@ -52,7 +52,7 @@ export default function AddClue(props) {
         console.log(formData);
         console.log(file);
 
-        dispatch(newClue(id,formData, token, navigate));
+        dispatch(newClue(id, formData, token, navigate));
 
         //Reset
         setFormData({
@@ -63,12 +63,12 @@ export default function AddClue(props) {
     };
 
     return (
-        <div className="AddCaseOuter">
+        <div className="AddClueOuter">
             <form onSubmit={handleOnSubmit}>
-                <div className="container">
-                    <div className="writecontainer">
+                <div className="ClueContainer">
+                    <div className="ClueWriteContainer">
                         <label>
-                            <div className="Title">Enter Clue Name *</div>
+                            <div className="ClueFormInputTitle">Enter Clue Name *</div>
                             <input
                                 required
                                 type="text"
@@ -79,43 +79,48 @@ export default function AddClue(props) {
                             />
                         </label>
 
-                    <label>
-                        <div className="Title">Enter Clue Description</div>
-                        <textarea
-                            className="ClueDescriptionBox"
-                            name="CaseDescription"
-                            placeholder="Enter case description">
-                        </textarea>
-                    </label>
+                        <label>
+                            <div className="ClueFormInputTitle">Enter Clue Description</div>
+                            <textarea
+                                className="ClueDescriptionBox"
+                                name="description"
+                                placeholder="Enter case description"
+                                value={description}
+                                onChange={handleOnChange}>
+                            </textarea>
+                        </label>
 
-                    <label>
-                        <div className="Title">Category</div>
-                        <select>
-                            <option value="PhysicalEvidence">Physical Evidence</option>
-                            <option value="WitnessStatment">Witness Statment</option>
-                            <option value="SurveillanceFootage">Surveillance Footage</option>
-                            <option value="ForensicAnalysis">Forensic Analysis</option>
-                            <option value="Observation">Observation</option>
-                        </select>
-                    </label>
-                </div>    
-                    <div id="upload-container">
-                        <label className="Title">Upload Image:</label>
-                        <div {...getRootProps()} id="dropzone">
+                        <label>
+                            <div className="ClueFormInputTitle">Category</div>
+                            <select name="category" value={category} onChange={handleOnChange}>
+                                <option value="Select">Select</option>
+                                <option value="PhysicalEvidence">Physical Evidence</option>
+                                <option value="WitnessStatment">Witness Statment</option>
+                                <option value="SurveillanceFootage">Surveillance Footage</option>
+                                <option value="ForensicAnalysis">Forensic Analysis</option>
+                                <option value="Observation">Observation</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div id="ClueUploadContainer">
+                        <label className="ClueFormInputTitle">Upload Image:</label>
+                        <div {...getRootProps()} id="ClueDropzone">
                             <input {...getInputProps()} />
                             <p>Drag & drop an image here, or click to select one</p>
                             {image && (
-                            <div>
-                                <p>Image Preview:</p>
-                                <img src={image} alt="Preview" id="preview" />
-                            </div>
-                        )}
+                                <div>
+                                    <p>Image Preview:</p>
+                                    <img src={image} alt="Preview" id="ClueImgPreview" />
+                                </div>
+                            )}
                         </div>
-                        
+
                     </div>
-            <button type="submit">Submit</button>
-            </div>
-        </form>
+                    <div className="ClueContainerButton">
+                        <button type="submit">Submit</button>
+                    </div>
+                </div>
+            </form>
         </div>
     );
 };

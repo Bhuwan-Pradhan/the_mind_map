@@ -3,13 +3,12 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: #f5f5f5;
+  /* background-color: #f5f5f5; */
 }
 
 .AddCaseOuter form {
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: center;
 }
 
@@ -18,10 +17,9 @@
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 400px;
-  max-width: 90%;
+  width: 90%;
+  max-width: 400px;
 }
-
 
 .CaseFormInputTitle {
   font-weight: bold;
@@ -29,8 +27,8 @@
 }
 
 .CaseWriteContainer input[type='text'],
-textarea {
-  width: 90%;
+.CaseWriteContainer textarea {
+  width: 100%;
   padding: 10px;
   margin-bottom: 15px;
   border: 1px solid #000000;
@@ -43,8 +41,8 @@ textarea {
   height: 100px;
 }
 
-#CaseUploadContainer{
- margin-bottom: 20px;
+#CaseUploadContainer {
+  margin-bottom: 20px;
 }
 
 #CaseDropzone {
@@ -65,9 +63,15 @@ textarea {
   margin-top: 10px;
 }
 
-.AddCaseForm button[type='submit'] {
+.CaseContainerButton {
+  align-items: center;
+  display: flex;
+  width: 100%;
+}
+
+.CaseContainerButton button[type='submit'] {
   background-color: #4caf50;
-  width: 93%;
+  width: 100%;
   color: #fff;
   padding: 10px;
   border: none;
@@ -76,12 +80,6 @@ textarea {
   transition: background-color 0.3s ease;
 }
 
-.AddCaseForm button[type='submit']:hover {
+.CaseContainer button[type='submit']:hover {
   background-color: #45a049;
-}
-
-.CaseWriteContainer  input[type=text] {
-  border: 1px solid black;
-  border-radius: 4px;
-  width: 90%;
 }

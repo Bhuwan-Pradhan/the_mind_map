@@ -1,7 +1,7 @@
 
 
 .navbar {
-    backdrop-filter: blur(12px);
+  background: linear-gradient(89.7deg, rgb(0, 0, 0) -10.7%, rgb(53, 92, 125) 88.8%);
     /* background-color: green; */
     display: flex;
     overflow: hidden;
@@ -31,11 +31,12 @@
   border: none;
   outline: none;
 }
-/* .navbar img {
-height: 50px;
+.navbar img {
+  padding: 2vh;
+height: 30px;
 margin-left: 10px;
 margin-top: 5px;
-} */
+}
 
 .navbar-right {
     /* float: right; */

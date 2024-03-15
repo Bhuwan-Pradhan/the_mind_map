@@ -1,11 +1,11 @@
-import "../css/componentsCss/AddCase.css"
+import "../css/componentsCss/AddPerson.css"
 import React, { useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
 import { newPerson } from "../services/caseApi";
 
-export default function AddClue(props) {
+export default function AddPerson(props) {
     const location = useLocation();
     const { id } = location.state;
     const [image, setImage] = useState(null);
@@ -52,7 +52,7 @@ export default function AddClue(props) {
         console.log(formData);
         console.log(file);
 
-        dispatch(newPerson(id,formData, token, navigate));
+        dispatch(newPerson(id, formData, token, navigate));
 
         //Reset
         setFormData({
@@ -63,44 +63,46 @@ export default function AddClue(props) {
     };
 
     return (
-        <div className="AddCaseOuter">
+        <div className="AddPersonOuter">
             <form onSubmit={handleOnSubmit}>
-                <div className="container">
-                    <div className="writecontainer">
+                <div className="PersonContainer">
+                    <div className="PersonWriteContainer">
                         <label>
-                            <div className="Title">Enter Clue Name *</div>
+                            <div className="PersonFormInputTitle">Enter Clue Name *</div>
                             <input
                                 required
                                 type="text"
                                 name="name"
-                                placeholder="Enter clue name"
+                                placeholder="Enter name of Person"
                                 value={name}
                                 onChange={handleOnChange}
                             />
                         </label>
 
-                    <label>
-                        <div className="Title">Enter occupation / role</div>
-                        <input
-                            required
-                            type="text"
-                            name="ClueDescription"
-                            placeholder="Enter occupation/role"
-                        // value={ClueDescription}
-                        // onChange={handleOnChange}
-                        />
-                    </label>
+                        <label>
+                            <div className="PersonFormInputTitle">Enter occupation / role</div>
+                            <input
+                                required
+                                type="text"
+                                name="profession"
+                                placeholder="Enter occupation/role"
+                                value={profession}
+                                onChange={handleOnChange}
+                            />
+                        </label>
 
-                    <label>
-                        <div className="Title">Enter Details of Interaction</div>
-                        <textarea
-                            className="CaseDescriptionBox"
-                            name="CaseDescription"
-                            placeholder="Enter case description">
-                        </textarea>
-                    </label>
-                </div>
-                    
+                        <label>
+                            <div className="PersonFormInputTitle">Enter Details of Interaction</div>
+                            <textarea
+                                className="CaseDescriptionBox"
+                                name="description"
+                                placeholder="Enter information gathered"
+                                value={description}
+                                onChange={handleOnChange}>
+                            </textarea>
+                        </label>
+                    </div>
+
 
                     <div id="PersonUploadContainer">
                         <label className="PersonFormInputTitle">Upload Image:</label>
@@ -108,16 +110,18 @@ export default function AddClue(props) {
                             <input {...getInputProps()} />
                             <p>Drag & drop an image here, or click to select one</p>
                             {image && (
-                            <div>
-                                <p>Image Preview:</p>
-                                <img src={image} alt="Preview" id="preview" />
-                            </div>
-                        )}
+                                <div>
+                                    <p>Image Preview:</p>
+                                    <img src={image} alt="Preview" id="PersonImgPreview" />
+                                </div>
+                            )}
                         </div>
                     </div>
-            </div>
-                    <button type="submit">Submit</button>
-        </form>
+                    <div className="PersonContainerButton">
+                        <button type="submit">Submit</button>
+                    </div>
+                </div>
+            </form>
         </div>
     );
 };

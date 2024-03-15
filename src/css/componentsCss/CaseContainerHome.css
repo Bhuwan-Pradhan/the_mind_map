@@ -297,7 +297,7 @@
   clip-path: polygon(0% 0%, 100% 0%, 90% 50%, 100% 100%, 0% 100%);
   height: auto;
   min-height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   width: 100%;
 }
 

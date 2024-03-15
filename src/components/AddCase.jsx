@@ -50,8 +50,8 @@ export default function AddCase() {
         formData.append("displayFile", file);
         console.log(formData);
         console.log(file);
-   
-        dispatch(newCase(formData,token, navigate));
+
+        dispatch(newCase(formData, token, navigate));
 
         //Reset
         setFormData({
@@ -99,7 +99,7 @@ export default function AddCase() {
                                 required
                                 type="text"
                                 name="place"
-                                placeholder="Enter Place"
+                                placeholder="Enter place of incident"
                                 value={place}
                                 onChange={handleOnChange}
                             />
@@ -122,8 +122,10 @@ export default function AddCase() {
                             )}
                         </div>
                     </div>
+                    <div className="CaseContainerButton">
+                        <button type="submit">Submit</button>
+                    </div>
                 </div>
-            <button type="submit">Submit</button>
             </form>
         </div>
     );
