@@ -22,11 +22,11 @@ export default function AddClue() {
 
     return (
         <div className="AddClueOuter">
-        <form>
-            <div className="container">
-                <div className="writecontainer">
+        <form className="AddClueForm">
+            <div className="ClueContainer">
+                <div className="ClueWriteContainer">
                     <label>
-                        <div className="Title">Enter Clue</div>
+                        <div className="ClueFormInputTitle">Enter Clue</div>
                         <input
                             required
                             type="text"
@@ -38,16 +38,16 @@ export default function AddClue() {
                     </label>
 
                     <label>
-                        <div className="Title">Enter Clue Description</div>
+                        <div className="ClueFormInputTitle">Enter Clue Description</div>
                         <textarea
                             className="ClueDescriptionBox"
-                            name="CaseDescription"
-                            placeholder="Enter case description">
+                            name="ClueDescription"
+                            placeholder="Enter clue description">
                         </textarea>
                     </label>
 
                     <label>
-                        <div className="Title">Category</div>
+                        <div className="ClueFormInputTitle">Category</div>
                         <select>
                             <option value="PhysicalEvidence">Physical Evidence</option>
                             <option value="WitnessStatment">Witness Statment</option>
@@ -57,22 +57,22 @@ export default function AddClue() {
                         </select>
                     </label>
                 </div>    
-                    <div id="upload-container">
-                        <label className="Title">Upload Image:</label>
-                        <div {...getRootProps()} id="dropzone">
+                    <div id="ClueUploadContainer">
+                        <label className="ClueFormInputTitle">Upload Image:</label>
+                        <div {...getRootProps()} id="ClueDropzone">
                             <input {...getInputProps()} />
                             <p>Drag & drop an image here, or click to select one</p>
                             {image && (
                             <div>
                                 <p>Image Preview:</p>
-                                <img src={image} alt="Preview" id="preview" />
+                                <img src={image} alt="Preview" id="ClueImgPreview" />
                             </div>
                         )}
                         </div>
                         
                     </div>
-            </div>
             <button type="submit">Submit</button>
+            </div>
         </form>
         </div>
     );

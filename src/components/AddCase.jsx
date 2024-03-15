@@ -63,11 +63,11 @@ export default function AddCase() {
 
     return (
         <div className="AddCaseOuter">
-            <form onSubmit={handleOnSubmit}>
-                <div className="container">
-                    <div className="writecontainer">
+            <form className="AddCaseForm" onSubmit={handleOnSubmit}>
+                <div className="CaseContainer">
+                    <div className="CaseWriteContainer">
                         <label>
-                            <div className="Title">Enter Case Name *</div>
+                            <div className="CaseFormInputTitle">Enter Case Name *</div>
                             <input
                                 required
                                 type="text"
@@ -79,7 +79,7 @@ export default function AddCase() {
                         </label>
 
                         <label>
-                            <div className="Title">Enter Case Description *</div>
+                            <div className="CaseFormInputTitle">Enter Case Description *</div>
 
                             <textarea
                                 className="CaseDescriptionBox"
@@ -93,7 +93,7 @@ export default function AddCase() {
                             {/* </div> */}
                         </label>
                         <label>
-                            <div className="Title">Enter Place *</div>
+                            <div className="CaseFormInputTitle">Enter Place *</div>
 
                             <input
                                 required
@@ -109,15 +109,15 @@ export default function AddCase() {
                     </div>
 
 
-                    <div id="upload-container">
-                        <label className="Title">Upload Image:</label>
-                        <div {...getRootProps()} id="dropzone">
+                    <div id="CaseUploadContainer">
+                        <label className="CaseFormInputTitle">Upload Image:</label>
+                        <div {...getRootProps()} id="CaseDropzone">
                             <input {...getInputProps()} />
                             <p>Drag & drop an image here, or click to select one</p>
                             {image && (
                                 <div>
                                     <p>Image Preview:</p>
-                                    <img src={image} alt="Preview" id="preview" />
+                                    <img src={image} alt="Preview" id="CaseImgPreview" />
                                 </div>
                             )}
                         </div>

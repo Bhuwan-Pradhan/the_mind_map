@@ -27,7 +27,8 @@ export default function Login() {
   };
 
   return (
-    <div className="mainpage">
+    <div className="OuterLoginPage">
+  
       <form action="" className="login__form" onSubmit={handleOnSubmit}>
         <h1 className="login__title">Login</h1>
 
@@ -61,6 +62,7 @@ export default function Login() {
           Don't have an account? <a href="/signup">Register</a>
         </div>
       </form>
+
     </div>
   )
 }

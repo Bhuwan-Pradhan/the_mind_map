@@ -22,11 +22,11 @@ export default function AddPerson() {
 
     return (
         <div className="AddPersonOuter">
-        <form>
-            <div className="container">
-                <div  className="writecontainerPerson">
+        <form className="AddPersonForm">
+            <div className="PersonContainer">
+                <div  className="PersonWriteContainer">
                 <label>
-                        <div className="Title">Enter Full Name </div>
+                        <div className="PersonFormInputTitle">Enter Full Name </div>
                         <input
                             required
                             type="text"
@@ -38,11 +38,11 @@ export default function AddPerson() {
                     </label>
 
                     <label>
-                        <div className="Title">Enter occupation / role</div>
+                        <div className="PersonFormInputTitle">Enter occupation / role</div>
                         <input
                             required
                             type="text"
-                            name="ClueDescription"
+                            name="PersonOccupation"
                             placeholder="Enter occupation/role"
                         // value={ClueDescription}
                         // onChange={handleOnChange}
@@ -50,25 +50,25 @@ export default function AddPerson() {
                     </label>
 
                     <label>
-                        <div className="Title">Enter Details of Interaction</div>
+                        <div className="PersonFormInputTitle">Enter Details of Interaction</div>
                         <textarea
-                            className="CaseDescriptionBox"
-                            name="CaseDescription"
+                            className="PersonDescriptionBox"
+                            name="PersonDescription"
                             placeholder="Enter case description">
                         </textarea>
                     </label>
                 </div>
                     
 
-                    <div id="upload-container">
-                        <label className="Title">Upload Image:</label>
-                        <div {...getRootProps()} id="dropzone">
+                    <div id="PersonUploadContainer">
+                        <label className="PersonFormInputTitle">Upload Image:</label>
+                        <div {...getRootProps()} id="PersonDropzone">
                             <input {...getInputProps()} />
                             <p>Drag & drop an image here, or click to select one</p>
                             {image && (
                             <div>
                                 <p>Image Preview:</p>
-                                <img src={image} alt="Preview" id="preview" />
+                                <img src={image} alt="Preview" id="PersonImgPreview" />
                             </div>
                         )}
                         </div>

@@ -7,7 +7,7 @@ export default function PersonHomePage(){
     return(
         <div>
             <NavBar/>
-        <div className="PersonContainer">
+        <div className="ShowPersonContainer">
         <a href="/addPerson" className="AddPerson" >Add Person</a>
             <PersonCard />
             <PersonCard />

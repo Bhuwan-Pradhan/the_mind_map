@@ -57,7 +57,7 @@ export default function Signup() {
 
   
     return(
-        <div className="mainpage">
+        <div className="OuterLoginPage">
         <form action="" className="login__form" onSubmit={handleOnSubmit}>
             <h1 className="login__title">Signup</h1>
 
