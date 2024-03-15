@@ -10,6 +10,7 @@ import ClueHomePage from "./pages/ClueHomePage";
 import AddClue from "./components/AddClue";
 import AddPerson from "./components/AddPerson";
 
+
 function App() {
   const { token } = useSelector((state) => state.auth);
   if (token) {
