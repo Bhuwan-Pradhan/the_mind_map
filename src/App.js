@@ -7,7 +7,8 @@ import HomePage from "./pages/HomePage";
 import AddCase from "./components/AddCase";
 import PersonHomePage from "./pages/PersonHomePage";
 import ClueHomePage from "./pages/ClueHomePage";
-
+import AddClue from "./components/AddClue";
+import AddPerson from "./components/AddPerson";
 
 function App() {
   const { token } = useSelector((state) => state.auth);
@@ -22,6 +23,8 @@ function App() {
           <Route path="/person" element={<PersonHomePage />} />
           <Route path="/clue" element={<ClueHomePage />} />
           <Route path="/addCase" element={<AddCase />} />
+          <Route path="/addClue" element={<AddClue />} />
+          <Route path="/addPerson" element={<AddPerson />} />
         </Routes>
       </div>
     );

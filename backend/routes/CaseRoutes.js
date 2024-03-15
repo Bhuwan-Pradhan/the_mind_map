@@ -20,8 +20,8 @@ const { auth } = require("../middlewares/auth");
 
 //Route for user signup
 router.post("/addCase", auth, addCase);
-router.post("/addClue", addClue);
-router.post("/addPerson", addPerson);
+router.post("/addClue",auth, addClue);
+router.post("/addPerson",auth, addPerson);
 router.get("/getCase", auth, getCaseById);
 
 module.exports = router

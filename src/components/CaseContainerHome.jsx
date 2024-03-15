@@ -1,5 +1,8 @@
-import "../css/componentsCss/CaseContainerHome.css"
+
+import { useNavigate } from "react-router-dom";
+import "../css/componentsCss/CaseContainerHome.css";
 export default function CaseContainerHome(props) {
+    const navigate = useNavigate();
     const utcTimeString = props.time;
     const utcTime = new Date(utcTimeString);
 
@@ -18,14 +21,14 @@ export default function CaseContainerHome(props) {
     // Format the Indian time as a string
     const indianTimeString = indianTime.toLocaleString("en-IN", {
         timeZone: "Asia/Kolkata",
-  hour12: true,
-  hour: "numeric",
-  minute: "numeric",
-  year: "numeric",
-  month: "2-digit",
-  day: "2-digit",
+        hour12: true,
+        hour: "numeric",
+        minute: "numeric",
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
     });
-
+    console.log(props.id);
     return (
         <>
             <a href="/addCase" className="addCase" >Add Case</a>
@@ -65,8 +68,18 @@ export default function CaseContainerHome(props) {
                                 <p class="inside-page__text">
                                     {props.description}
                                 </p>
-                                <a href="#" class="inside-page__btn inside-page__btn--city">Clue Book</a>
-                                <a href="#" class="inside-page__btn inside-page__btn--city">People Tracker</a>
+                                <button className="inside-page__btn inside-page__btn--city"
+                                    onClick={() => navigate("/clue", { state: { id: props.id } })}
+                                >
+                                    Clue Book
+                                </button>
+
+                                <button className="inside-page__btn inside-page__btn--city"
+                                    onClick={() => navigate("/person", { state: { id: props.id } })}
+                                >
+                                    People Tracker
+                                </button>
+
                             </div>
                         </div>
                     </div>
