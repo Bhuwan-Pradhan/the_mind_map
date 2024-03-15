@@ -7,7 +7,6 @@ exports.addClue = async (req, res) => {
         const { caseId, name, description, category } = req.body;
         const displayFile = req.files.displayFile;
         const media_type = req.files.displayFile.mimetype;
-        console.log(media_type)
         const file = await uploadMediaToCloudinary(displayFile, process.env.FOLDER_NAME, media_type);
         const clue = new Clue({
             case: caseId,

@@ -24,8 +24,8 @@ function App() {
           <Route path="/person" element={<PersonHomePage />} />
           <Route path="/clue" element={<ClueHomePage />} />
           <Route path="/addCase" element={<AddCase />} />
-          <Route path="/addclue" element={<AddClue />} />
-          <Route path="/addperson" element={<AddPerson />} />
+          <Route path="/addClue" element={<AddClue />} />
+          <Route path="/addPerson" element={<AddPerson />} />
         </Routes>
       </div>
     );

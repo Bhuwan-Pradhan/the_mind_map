@@ -1,48 +1,90 @@
-import "../css/componentsCss/AddPerson.css"
-
+import "../css/componentsCss/AddCase.css"
 import React, { useState } from 'react';
 import { useDropzone } from 'react-dropzone';
+import { useDispatch, useSelector } from "react-redux";
+import { useLocation, useNavigate } from "react-router-dom";
+import { newPerson } from "../services/caseApi";
 
-
-export default function AddPerson() {
-    const [text1, setText1] = useState('');
-    const [text2, setText2] = useState('');
-    const [text3, setText3] = useState('');
+export default function AddClue(props) {
+    const location = useLocation();
+    const { id } = location.state;
     const [image, setImage] = useState(null);
+    const { token } = useSelector((state) => state.auth);
+    const [file, setFile] = useState('');
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+    const [formData, setFormData] = useState({
+        name: "",
+        description: "",
+        profession: "",
+    });
+
+    const { name, description, profession } = formData;
+
+    // Handle input fields, when some value changes
+    const handleOnChange = (e) => {
+        setFormData((prevData) => ({
+            ...prevData,
+            [e.target.name]: e.target.value,
+        }));
+    };
 
     const onDrop = (acceptedFiles) => {
-        const file = acceptedFiles[0];
-        setImage(URL.createObjectURL(file));
+        const tempFile = acceptedFiles[0];
+        setFile(tempFile);
+        setImage(URL.createObjectURL(tempFile));
     };
+
 
     const { getRootProps, getInputProps } = useDropzone({
         accept: 'image/*',
         onDrop,
     });
 
+    const handleOnSubmit = async (e) => {
+        e.preventDefault();
+        const formData = new FormData();
+        formData.append("caseId", id._id);
+        formData.append("name", name);
+        formData.append("description", description);
+        formData.append("profession", profession);
+        formData.append("displayFile", file);
+        console.log(formData);
+        console.log(file);
+
+        dispatch(newPerson(id,formData, token, navigate));
+
+        //Reset
+        setFormData({
+            name: "",
+            description: "",
+            profession: "",
+        });
+    };
+
     return (
-        <div className="AddPersonOuter">
-        <form className="AddPersonForm">
-            <div className="PersonContainer">
-                <div  className="PersonWriteContainer">
-                <label>
-                        <div className="PersonFormInputTitle">Enter Full Name </div>
-                        <input
-                            required
-                            type="text"
-                            name="PersonName"
-                            placeholder="Enter full name"
-                        // value={PersonName}
-                        // onChange={handleOnChange}
-                        />
-                    </label>
+        <div className="AddCaseOuter">
+            <form onSubmit={handleOnSubmit}>
+                <div className="container">
+                    <div className="writecontainer">
+                        <label>
+                            <div className="Title">Enter Clue Name *</div>
+                            <input
+                                required
+                                type="text"
+                                name="name"
+                                placeholder="Enter clue name"
+                                value={name}
+                                onChange={handleOnChange}
+                            />
+                        </label>
 
                     <label>
-                        <div className="PersonFormInputTitle">Enter occupation / role</div>
+                        <div className="Title">Enter occupation / role</div>
                         <input
                             required
                             type="text"
-                            name="PersonOccupation"
+                            name="ClueDescription"
                             placeholder="Enter occupation/role"
                         // value={ClueDescription}
                         // onChange={handleOnChange}
@@ -50,10 +92,10 @@ export default function AddPerson() {
                     </label>
 
                     <label>
-                        <div className="PersonFormInputTitle">Enter Details of Interaction</div>
+                        <div className="Title">Enter Details of Interaction</div>
                         <textarea
-                            className="PersonDescriptionBox"
-                            name="PersonDescription"
+                            className="CaseDescriptionBox"
+                            name="CaseDescription"
                             placeholder="Enter case description">
                         </textarea>
                     </label>
@@ -68,7 +110,7 @@ export default function AddPerson() {
                             {image && (
                             <div>
                                 <p>Image Preview:</p>
-                                <img src={image} alt="Preview" id="PersonImgPreview" />
+                                <img src={image} alt="Preview" id="preview" />
                             </div>
                         )}
                         </div>
