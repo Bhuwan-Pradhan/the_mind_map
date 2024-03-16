@@ -32,15 +32,17 @@ const PersonCard = (props) => {
     return (
         <div class="PersonCard">
             <div class="PersonCardOuter">
-                <div class="content">
+                <div class="OutContent">
                     <img src={props.image} />
-                    <h3>{props.name}</h3>
-                    <h3>{props.profession}</h3>
-                    <h3>time: {indianTimeString}</h3>
+                    <div className="ShowPrsnDetails">
+                        <h3>{props.name}</h3>
+                        <p>{props.profession}</p>
+                        <p>Time: {indianTimeString}</p>
+                    </div>
                 </div>
             </div>
             <div class="PersonCardInner">
-                <div class="content">
+                <div class="InContent">
                     <p>{props.description}</p>
                 </div>
             </div>
