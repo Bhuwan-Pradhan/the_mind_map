@@ -1,4 +1,6 @@
 const Case = require("../models/CaseModel");
+const Clue = require("../models/ClueModel");
+const Person = require("../models/PersonModel");
 
 exports.getCaseById = async (req, res) => {
     try {
@@ -9,6 +11,33 @@ exports.getCaseById = async (req, res) => {
     catch (err) {
         return res.status(400).json({
             error: "Error While getting Cases",
+            message: err.message
+        })
+    }
+}
+
+exports.getClueById = async (req, res) => {
+    try {
+        const {caseId}  = req.body;
+        const clueData = await Clue.find({ case: caseId }).populate('case').sort({ createdAt: -1 }).exec();
+        res.json({ success: true, data: clueData, });
+    }
+    catch (err) {
+        return res.status(400).json({
+            error: "Error While getting Clue",
+            message: err.message
+        })
+    }
+}
+exports.getPersonById = async (req, res) => {
+    try {
+        const {caseId}  = req.body;
+        const personData = await Person.find({ case: caseId }).populate('case').sort({ createdAt: -1 }).exec();
+        res.json({ success: true, data: personData, });
+    }
+    catch (err) {
+        return res.status(400).json({
+            error: "Error While getting Clue",
             message: err.message
         })
     }

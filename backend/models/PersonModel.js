@@ -3,9 +3,9 @@ const mongoose = require("mongoose");
 
 const personSchema = new mongoose.Schema(
 	{
-		// Define the name field with type String, required, and trimmed
 		case: {
-			type: String,
+			type: mongoose.Schema.Types.ObjectId,
+			ref: "case",
 			required: true,
 		},
 		name: {

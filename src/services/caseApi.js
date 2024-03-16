@@ -7,7 +7,9 @@ const {
   ADDCASE_API,
   GETCASE_API,
   ADDCLUE_API,
-  ADDPERSON_API
+  ADDPERSON_API,
+  GETCLUE_API,
+  GETPERSON_API
 } = caseEndpoints
 
 
@@ -114,6 +116,40 @@ export function newPerson(id,formData, token, navigate) {
 
     toast.dismiss(toastId)
   }
+}
+
+
+export const getCaseClue = async (caseId) => {
+  let result = null
+  try {
+    console.log(caseId);
+    const response = await apiConnector("POST", GETCLUE_API, {caseId}) 
+    if (!response?.data?.success) {
+      throw new Error("Could Not Fetch clues")
+    }
+    result = response?.data
+  } catch (error) {
+    console.log("GET_CLUE_API API ERROR............", error)
+    toast.error(error.message)
+  }
+  return result;
+}
+
+
+export const getCasePerson = async (caseId) => {
+  let result = null
+  try {
+    console.log(caseId);
+    const response = await apiConnector("POST", GETPERSON_API, {caseId}) 
+    if (!response?.data?.success) {
+      throw new Error("Could Not Fetch person")
+    }
+    result = response?.data
+  } catch (error) {
+    console.log("GET_PERSON_API API ERROR............", error)
+    toast.error(error.message)
+  }
+  return result;
 }
 
 
