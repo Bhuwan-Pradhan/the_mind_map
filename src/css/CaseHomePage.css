@@ -1,6 +1,6 @@
 .OuterContainer {
 	font-size: 16px;
-	background-color: #e2efff;
+	/* background-color: #e2efff; */
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-evenly;

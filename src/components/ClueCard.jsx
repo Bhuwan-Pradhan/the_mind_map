@@ -36,7 +36,6 @@ const ClueCard = (props) => {
     <h3 className="ClueTitle">{props.name}</h3>
     <figure className="ClueImage">
       <img src={props.image}/>
-      <figcaption>{props.name}</figcaption>
     </figure>
     <p class="ClueDescription">
       {PaymentResponse.description}</p>

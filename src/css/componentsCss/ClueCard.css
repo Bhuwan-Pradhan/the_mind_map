@@ -35,11 +35,12 @@
 	align-items: center;
 	overflow: hidden;
 	border-radius: 1.5rem;
+	height: 320px;
+	object-fit: contain;
 }
 
 .ClueImage img {
-	height: 320px;
-	display: block;
+	max-width: 300px;
 }
 
 .ClueDescription {
