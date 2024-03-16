@@ -84,3 +84,15 @@ margin-top: 5px;
 Logout button:active {
   opacity: .5;
 }
+.leftWelcome{
+  display: none;
+}
+@media (width<660px) {
+  .leftWelcome{
+    display: block;
+    margin-left: 7vw;
+  }
+  .rightWelcome{
+    display: none;
+  }
+}
