@@ -6,6 +6,8 @@ import { setSignupData } from "../slices/authSlice";
 import { signUp } from "../services/authApi";
 import "../css/Signup.css";
 import "../css/Login.css";
+import logo from "../assets/TheMindMapLogoLight.png"
+
 
 export default function Signup() {
   const navigate = useNavigate();
@@ -59,6 +61,7 @@ export default function Signup() {
     return(
         <div className="OuterLoginPage">
         <form action="" className="login__form" onSubmit={handleOnSubmit}>
+        <div className="LoginLogoImg"><img src={logo} alt="The Mind Map" /></div>
             <h1 className="login__title">Signup</h1>
 
         <div class="login__inputs">
@@ -104,8 +107,9 @@ export default function Signup() {
 
           </div>
         </div>
-
-        <button type="submit" class="signup__button">Signup</button>
+        <div className="LoginBtnCntr">
+          <button type="submit" class="signup__button">Signup</button>
+        </div>
 
         <div class="login__register">
           Already have an account? <a href="/login">Login</a>

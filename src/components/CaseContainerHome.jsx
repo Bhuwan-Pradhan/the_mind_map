@@ -31,7 +31,7 @@ export default function CaseContainerHome(props) {
     
     return (
         <>
-            <a href="/addCase" className="addCase" >Add Case</a>
+        
             <div id="OuterCaseContainer">
 
                 <section class="card-section">
@@ -65,20 +65,24 @@ export default function CaseContainerHome(props) {
                                 <h3 class="inside-page__heading inside-page__heading--city">
                                     {props.name}
                                 </h3>
-                                <p class="inside-page__text">
-                                    {props.description}
-                                </p>
-                                <button className="inside-page__btn inside-page__btn--city"
-                                    onClick={() => navigate("/clue", { state: { id: props.id } })}
-                                >
-                                    Clue Book
-                                </button>
+                                <div className="CaseDescriptionCntr">
+                                    <p class="inside-page__text">
+                                        {props.description}
+                                    </p>
+                                </div>
+                                <div className="CluePrsnBtnCntr">
+                                    <button className="inside-page__btn inside-page__btn--city"
+                                        onClick={() => navigate("/clue", { state: { id: props.id } })}
+                                    >
+                                        Clue Book
+                                    </button>
 
-                                <button className="inside-page__btn inside-page__btn--city"
-                                    onClick={() => navigate("/person", { state: { id: props.id } })}
-                                >
-                                    People Tracker
-                                </button>
+                                    <button className="inside-page__btn inside-page__btn--city"
+                                        onClick={() => navigate("/person", { state: { id: props.id } })}
+                                    >
+                                        People Tracker
+                                    </button>
+                                </div>
 
                             </div>
                         </div>

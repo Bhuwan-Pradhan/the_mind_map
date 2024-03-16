@@ -1,5 +1,7 @@
 import React from 'react';
 import "../css/componentsCss/ClueCard.css"
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import {faPenToSquare } from '@fortawesome/free-solid-svg-icons'
 
 
 const ClueCard = (props) => {

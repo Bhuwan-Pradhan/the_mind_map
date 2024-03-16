@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { login } from "../services/authApi";
+import logo from "../assets/TheMindMapLogoLight.png"
 
 export default function Login() {
   const navigate = useNavigate();
@@ -30,6 +31,7 @@ export default function Login() {
     <div className="OuterLoginPage">
   
       <form action="" className="login__form" onSubmit={handleOnSubmit}>
+        <div className="LoginLogoImg"><img src={logo} alt="The Mind Map" /></div>
         <h1 className="login__title">Login</h1>
 
         <div className="login__inputs">
@@ -56,7 +58,9 @@ export default function Login() {
 
           </div>
         </div>
+        <div className="LoginBtnCntr">
         <button type="submit" className="login__button">Login</button>
+        </div>
 
         <div className="login__register">
           Don't have an account? <a href="/signup">Register</a>
