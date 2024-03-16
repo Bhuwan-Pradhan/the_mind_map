@@ -4,7 +4,6 @@ import ClueCard from "../components/ClueCard";
 import { useLocation, useNavigate } from "react-router-dom";
 import { getCaseClue } from "../services/caseApi";
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
 
 
 export default function ClueHomePage() {

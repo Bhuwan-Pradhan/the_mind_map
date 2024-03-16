@@ -86,8 +86,9 @@ export function logout(navigate) {
   return (dispatch) => {
     dispatch(setToken(null))
     dispatch(setUser(null))
-    localStorage.removeItem("token")
-    localStorage.removeItem("user")
+    const cookies = new Cookies();
+    cookies.set("token", null);
+    cookies.set("user", null);
     toast.success("Logged Out")
     navigate("/")
   }
