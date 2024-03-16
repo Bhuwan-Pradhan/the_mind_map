@@ -2,18 +2,46 @@ import React from 'react';
 import "../css/componentsCss/PersonCard.css"
 
 
-const PersonCard = () => {
+const PersonCard = (props) => {
+    const utcTimeString = props.time;
+    const utcTime = new Date(utcTimeString);
+
+    // Get the UTC time in milliseconds
+    const utcMilliseconds = utcTime.getTime();
+    
+    
+    // Calculate the Indian time by adding the offset
+    const indianTimeMilliseconds = utcMilliseconds;
+    
+    // Create a new Date object for Indian time
+    const indianTime = new Date(indianTimeMilliseconds);
+    
+    // Format the Indian time as a string
+    const options = {
+        timeZone: "Asia/Kolkata",
+        hour12: true,
+        hour: "numeric",
+        minute: "numeric",
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+    };
+    
+    const indianTimeString = indianTime.toLocaleString("en-IN", options);
+    
     return (
         <div class="PersonCard">
             <div class="PersonCardOuter">
                 <div class="content">
-                    <img src="https://preview.redd.it/under-what-circumstances-would-you-want-to-see-tony-stark-v0-x8aaxbjh8r6a1.jpg?auto=webp&s=b498ffbb7bcd8ecba1c178cfa6afef59b4038d50" />
-                    <h3>Person Name</h3>
+                    <img src={props.image} />
+                    <h3>{props.name}</h3>
+                    <h3>{props.profession}</h3>
+                    <h3>time: {indianTimeString}</h3>
                 </div>
             </div>
             <div class="PersonCardInner">
                 <div class="content">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste veritatis provident at.</p>
+                    <p>{props.description}</p>
                 </div>
             </div>
         </div>
