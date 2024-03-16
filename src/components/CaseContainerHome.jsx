@@ -8,18 +8,16 @@ export default function CaseContainerHome(props) {
 
     // Get the UTC time in milliseconds
     const utcMilliseconds = utcTime.getTime();
-
-    // Indian Standard Time (IST) is UTC + 5 hours and 30 minutes
-    const ISTOffset = 5.5 * 60 * 60 * 1000;
-
+    
+    
     // Calculate the Indian time by adding the offset
-    const indianTimeMilliseconds = utcMilliseconds + ISTOffset;
-
+    const indianTimeMilliseconds = utcMilliseconds;
+    
     // Create a new Date object for Indian time
     const indianTime = new Date(indianTimeMilliseconds);
-
+    
     // Format the Indian time as a string
-    const indianTimeString = indianTime.toLocaleString("en-IN", {
+    const options = {
         timeZone: "Asia/Kolkata",
         hour12: true,
         hour: "numeric",
@@ -27,8 +25,10 @@ export default function CaseContainerHome(props) {
         year: "numeric",
         month: "2-digit",
         day: "2-digit",
-    });
-    console.log(props.id);
+    };
+    
+    const indianTimeString = indianTime.toLocaleString("en-IN", options);
+    
     return (
         <>
         
