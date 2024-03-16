@@ -85,3 +85,10 @@
 .PersonContainer button[type='submit']:hover {
   background-color: #45a049;
 }
+.PersonWriteContainer *:-webkit-autofill,
+.PersonWriteContainer *:-webkit-autofill:hover,
+.PersonWriteContainer *:-webkit-autofill:focus,
+.PersonWriteContainer *:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-text-fill-color: black;
+}

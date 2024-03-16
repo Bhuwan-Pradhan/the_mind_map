@@ -12,7 +12,13 @@
   /* max-height: 90vh; */
   align-items: center;
 }
-
+.ClueWriteContainer *:-webkit-autofill,
+.ClueWriteContainer *:-webkit-autofill:hover,
+.ClueWriteContainer *:-webkit-autofill:focus,
+.ClueWriteContainer *:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-text-fill-color: black;
+}
 .ClueContainer {
   background-color: #fff;
   padding: 20px;
