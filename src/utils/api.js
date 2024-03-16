@@ -12,6 +12,8 @@ export const caseEndpoints = {
   ADDCLUE_API: BASE_URL + "/case/addClue",
   ADDPERSON_API: BASE_URL + "/case/addPerson",
   GETCASE_API: BASE_URL + "/case/getCase",
+  GETCLUE_API: BASE_URL + "/case/getClue",
+  GETPERSON_API: BASE_URL + "/case/getPerson",
 }
 
 

@@ -13,6 +13,8 @@ const {
 } = require("../controllers/NewPerson");
 const {
     getCaseById,
+    getClueById,
+    getPersonById
 } = require("../controllers/GetAll");
 
 
@@ -23,5 +25,7 @@ router.post("/addCase", auth, addCase);
 router.post("/addClue",auth, addClue);
 router.post("/addPerson",auth, addPerson);
 router.get("/getCase", auth, getCaseById);
+router.post("/getClue", getClueById);
+router.post("/getPerson", getPersonById);
 
 module.exports = router

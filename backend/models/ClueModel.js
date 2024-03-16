@@ -5,7 +5,8 @@ const mongoose = require("mongoose");
 const clueSchema = new mongoose.Schema(
 	{
 		case: {
-			type: String,
+			type: mongoose.Schema.Types.ObjectId,
+			ref: "case",
 			required: true,
 		},
 		name: {
