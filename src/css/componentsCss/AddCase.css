@@ -83,3 +83,10 @@
 .CaseContainer button[type='submit']:hover {
   background-color: #45a049;
 }
+.CaseWriteContainer *:-webkit-autofill,
+.CaseWriteContainer *:-webkit-autofill:hover,
+.CaseWriteContainer *:-webkit-autofill:focus,
+.CaseWriteContainer *:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-text-fill-color: black;
+}
