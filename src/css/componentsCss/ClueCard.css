@@ -12,6 +12,7 @@
 	margin: 2.2rem;
 	display: flex;
 	flex-direction: column;
+	/* justify-content: space-evenly; */
 	border-radius: 1.7rem;
 	box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2);
 	transform: translateY(-1rem);
@@ -27,6 +28,7 @@
 
 .ClueImage {
 	width: 100%;
+	margin-top: 1.5rem;
 	margin-bottom: 1.5rem;
 	display: flex;
 	justify-content: center;
@@ -46,15 +48,16 @@
 	width: calc(100% - calc(2.8rem * 2));
 	height: 320px;
 	line-height: 1.75rem;
-	padding: 2.5rem;
+	padding: 1.5rem;
 	position: absolute;
+	margin-top: 1.5rem;
 	top: calc(2.8rem + 3.3rem);
 	left: 2.8rem;
 	overflow: auto;
 	opacity: 0;
 	border-radius: 1.5rem;
 	transition: opacity 200ms ease-out;
-  scrollbar-width: none;
+  	scrollbar-width: none;
 }
 
 .ClueImage:hover + .ClueDescription,
@@ -106,3 +109,4 @@
 .AddClue:active {
   background-color: #f3231c;
 }
+
