@@ -1,22 +1,24 @@
-import "../css/componentsCss/AddPerson.css"
+import "../css/componentsCss/AddCase.css"
 import React, { useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
-import { newPerson } from "../services/caseApi";
+import { updatePerson } from "../services/caseApi";
 
-export default function AddPerson(props) {
+export default function UpdatePerson() {
+    
     const location = useLocation();
-    const { id } = location.state;
-    const [image, setImage] = useState(null);
-    const { token } = useSelector((state) => state.auth);
+    const {caseId, id, uName, uProfession, uImage, uDescription } = location.state;
+    const [image, setImage] = useState(uImage);
     const [file, setFile] = useState('');
+    const { token } = useSelector((state) => state.auth);
     const navigate = useNavigate();
     const dispatch = useDispatch();
+
     const [formData, setFormData] = useState({
-        name: "",
-        description: "",
-        profession: "",
+        name: uName,
+        description: uDescription,
+        profession: uProfession,
     });
 
     const { name, description, profession } = formData;
@@ -44,36 +46,34 @@ export default function AddPerson(props) {
     const handleOnSubmit = async (e) => {
         e.preventDefault();
         const formData = new FormData();
-        formData.append("caseId", id._id);
+        formData.append("personId", id._id);
         formData.append("name", name);
         formData.append("description", description);
         formData.append("profession", profession);
         formData.append("displayFile", file);
-        console.log(formData);
-        console.log(file);
 
-        dispatch(newPerson(id, formData, token, navigate));
+        dispatch(updatePerson(caseId,formData, token, navigate));
 
         //Reset
         setFormData({
             name: "",
             description: "",
-            profession: "",
+            place: "",
         });
     };
 
     return (
-        <div className="AddPersonOuter">
-            <form onSubmit={handleOnSubmit}>
-                <div className="PersonContainer">
-                    <div className="PersonWriteContainer">
+        <div className="AddCaseOuter">
+            <form className="AddCaseForm" onSubmit={handleOnSubmit}>
+                <div className="CaseContainer">
+                    <div className="CaseWriteContainer">
                         <label>
-                            <div className="PersonFormInputTitle">Enter Person Name *</div>
+                            <div className="CaseFormInputTitle">Enter Case Name *</div>
                             <input
                                 required
                                 type="text"
                                 name="name"
-                                placeholder="Enter name of Person"
+                                placeholder="Enter case name"
                                 value={name}
                                 onChange={handleOnChange}
                             />
@@ -104,20 +104,20 @@ export default function AddPerson(props) {
                     </div>
 
 
-                    <div id="PersonUploadContainer">
-                        <label className="PersonFormInputTitle">Upload Image:</label>
-                        <div {...getRootProps()} id="PersonDropzone">
+                    <div id="CaseUploadContainer">
+                        <label className="CaseFormInputTitle">Upload Image:</label>
+                        <div {...getRootProps()} id="CaseDropzone">
                             <input {...getInputProps()} />
                             <p>Drag & drop an image here, or click to select one</p>
                             {image && (
                                 <div>
                                     <p>Image Preview:</p>
-                                    <img src={image} alt="Preview" id="PersonImgPreview" />
+                                    <img src={image} alt="Preview" id="CaseImgPreview" />
                                 </div>
                             )}
                         </div>
                     </div>
-                    <div className="PersonContainerButton">
+                    <div className="CaseContainerButton">
                         <button type="submit">Submit</button>
                     </div>
                 </div>

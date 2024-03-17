@@ -9,6 +9,9 @@ import PersonHomePage from "./pages/PersonHomePage";
 import ClueHomePage from "./pages/ClueHomePage";
 import AddClue from "./components/AddClue";
 import AddPerson from "./components/AddPerson";
+import UpdateCase from "./components/UpdateCase";
+import UpdateClue from "./components/UpdateClue";
+import UpdatePerson from "./components/UpdatePerson";
 
 
 function App() {
@@ -26,6 +29,9 @@ function App() {
           <Route path="/addCase" element={<AddCase />} />
           <Route path="/addClue" element={<AddClue />} />
           <Route path="/addPerson" element={<AddPerson />} />
+          <Route path="/updateCase" element={<UpdateCase />} />
+          <Route path="/updateClue" element={<UpdateClue />} />
+          <Route path="/updatePerson" element={<UpdatePerson />} />
         </Routes>
       </div>
     );
