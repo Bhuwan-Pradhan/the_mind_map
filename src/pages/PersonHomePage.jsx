@@ -23,7 +23,7 @@ export default function PersonHomePage() {
 
     useEffect(() => {
         getAllData();
-    }, []);
+    }, [personData]);
     return (
         <div>
             <NavBar />
@@ -34,7 +34,7 @@ export default function PersonHomePage() {
                     Add Person
                 </button>
                 {personData?.data.map((element) => (
-                    <PersonCard id={element} name={element.name} description={element.description} profession={element.profession} image={element.image} time={element.
+                    <PersonCard caseId={id} id={element} name={element.name} description={element.description} profession={element.profession} image={element.image} time={element.
                         createdAt} />
                 ))}
             </div>

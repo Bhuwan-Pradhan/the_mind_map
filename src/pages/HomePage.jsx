@@ -11,7 +11,6 @@ export default function HomePage() {
     const getAllData = async () => {
         try {
             const getCase = await getUserCase(token);
-
             setCaseData(getCase);
         } catch (error) {
             console.log(error);
@@ -20,7 +19,7 @@ export default function HomePage() {
 
     useEffect(() => {
         getAllData();
-    }, []);
+    }, [caseData]);
     return (
         <div>
             <NavBar />
@@ -28,8 +27,11 @@ export default function HomePage() {
                 <a href="/addCase" className="addCase" >Add Case</a>
             </div>
             {caseData?.data.map((element) => (
-                <CaseContainerHome id={element} name={element.name} description={element.description} place={element.place} image={element.image} time={element.
+                <div>
+                    <CaseContainerHome id={element} name={element.name} description={element.description} place={element.place} image={element.image} time={element.
                     createdAt} />
+                </div>
+                
             ))}
         </div>
     );

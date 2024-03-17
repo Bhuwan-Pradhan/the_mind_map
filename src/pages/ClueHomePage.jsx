@@ -23,7 +23,7 @@ export default function ClueHomePage() {
 
     useEffect(() => {
         getAllData();
-    }, []);
+    }, [clueData]);
     return (
         <div>
             <NavBar />
@@ -34,7 +34,7 @@ export default function ClueHomePage() {
                     Add Clue
                 </button>
                 {clueData?.data.map((element) => (
-                    <ClueCard id={element} name={element.name} description={element.description} category={element.category} image={element.image} time={element.
+                    <ClueCard caseId={id} id={element} name={element.name} description={element.description} category={element.category} image={element.image} time={element.
                         createdAt} />
                 ))}
             </div>

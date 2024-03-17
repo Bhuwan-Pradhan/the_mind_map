@@ -1,21 +1,25 @@
 
 import { useNavigate } from "react-router-dom";
 import "../css/componentsCss/CaseContainerHome.css";
+import { deleteCase } from "../services/caseApi";
+import { useDispatch, useSelector } from "react-redux";
 export default function CaseContainerHome(props) {
+    const dispatch = useDispatch();
+    const { token } = useSelector((state) => state.auth);
     const navigate = useNavigate();
     const utcTimeString = props.time;
     const utcTime = new Date(utcTimeString);
 
     // Get the UTC time in milliseconds
     const utcMilliseconds = utcTime.getTime();
-    
-    
+
+
     // Calculate the Indian time by adding the offset
     const indianTimeMilliseconds = utcMilliseconds;
-    
+
     // Create a new Date object for Indian time
     const indianTime = new Date(indianTimeMilliseconds);
-    
+
     // Format the Indian time as a string
     const options = {
         timeZone: "Asia/Kolkata",
@@ -26,12 +30,12 @@ export default function CaseContainerHome(props) {
         month: "2-digit",
         day: "2-digit",
     };
-    
+
     const indianTimeString = indianTime.toLocaleString("en-IN", options);
-    
+
     return (
         <>
-        
+
             <div id="OuterCaseContainer">
 
                 <section class="card-section">
@@ -56,6 +60,8 @@ export default function CaseContainerHome(props) {
                                 </div>
                                 <div class="card-back">
                                     <img class="img__container" src={props.image} alt="" />
+                                    <button onClick={() => navigate("/updateCase", { state: { id: props.id, uName: props.name, uImage: props.image, uPlace: props.place, uDescription: props.description } })}>update</button>
+                                    <button onClick={() => { dispatch(deleteCase(token, props.id._id)) }}>delete</button>
                                 </div>
                             </div>
                         </div>
