@@ -4,8 +4,8 @@ import "../css/componentsCss/CaseContainerHome.css";
 import { deleteCase } from "../services/caseApi";
 import { useDispatch, useSelector } from "react-redux";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faPenToSquare } from '@fortawesome/free-solid-svg-icons';
-import {faTrashCan } from '@fortawesome/free-regular-svg-icons';
+import { faPenToSquare } from '@fortawesome/free-solid-svg-icons';
+import { faTrashCan } from '@fortawesome/free-regular-svg-icons';
 
 
 export default function CaseContainerHome(props) {
@@ -68,7 +68,6 @@ export default function CaseContainerHome(props) {
                                     <div className="CaseEDButtons">
                                         <button onClick={() => navigate("/updateCase", { state: { id: props.id, uName: props.name, uImage: props.image, uPlace: props.place, uDescription: props.description } })}><FontAwesomeIcon icon={faPenToSquare} /></button>
                                         <button onClick={() => { dispatch(deleteCase(token, props.id._id)) }}><FontAwesomeIcon icon={faTrashCan} /></button>
-                                        <button onClick={() => navigate("/timeline", { state: { id: props.id} })}>TimeLine</button>
                                     </div>
                                 </div>
                             </div>
@@ -96,7 +95,7 @@ export default function CaseContainerHome(props) {
                                     >
                                         People Tracker
                                     </button>
-                                    <button onClick={() => navigate("/timeline", { state: { id: props.id} })}>TimeLine</button>
+                                    <button className="inside-page__btn inside-page__btn--city" onClick={() => navigate("/timeline", { state: { id: props.id } })}>TimeLine</button>
                                 </div>
 
                             </div>

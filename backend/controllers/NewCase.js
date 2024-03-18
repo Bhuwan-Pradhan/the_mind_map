@@ -48,7 +48,7 @@ exports.updateCase = async (req, res) => {
         const { caseId, name, description, place } = req.body;
         const files = req.files;
         let fileUrl;
-        if (files.displayFile) {
+        if (files) {
             const displayFile=files.displayFile;
             const media_type = req.files.displayFile.mimetype;
             const file = await uploadMediaToCloudinary(displayFile, process.env.FOLDER_NAME, media_type);

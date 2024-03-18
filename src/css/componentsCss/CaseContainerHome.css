@@ -1,4 +1,3 @@
-
 /* CSS reset */
 #OuterCaseContainer *,
 #OuterCaseContainer *::after,
@@ -10,17 +9,17 @@
 }
 
 /* html { font-size: 62.5%; } */
-#OuterCaseContainer{
+#OuterCaseContainer {
   /* font-size: 62.5%; */
-    box-sizing: border-box;
-    font-family: 'Open Sans', sans-serif;
-    position: relative;
-    margin-top: 5rem;
-    margin-bottom: 5rem;
-    /* background-color: red; */
-    display: flex;
-    /* gap:3rem; */
-  }
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+  position: relative;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  /* background-color: red; */
+  display: flex;
+  /* gap:3rem; */
+}
 
 .AddCaseBtnCntr {
   display: flex;
@@ -30,32 +29,33 @@
   z-index: 101;
 }
 
-.addCase{
+.addCase {
 
-    background: #FF4742;
-    border: 1px solid #FF4742;
-    border-radius: 6px;
-    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
-    box-sizing: border-box;
-    color: #FFFFFF;
-    cursor: pointer;
-    display: inline-block;
-    font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
-    font-size: 16px;
-    font-weight: 800;
-    line-height: 16px;
-    min-height: 50px;
-    min-width: 8rem;
-    outline: 0;
-    padding-top:12px;
-    text-align: center;
-    text-rendering: geometricprecision;
-    text-transform: none;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    vertical-align: middle;
+  background: #FF4742;
+  border: 1px solid #FF4742;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 16px;
+  min-height: 50px;
+  min-width: 8rem;
+  outline: 0;
+  padding-top: 12px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
 }
+
 .addCase:hover,
 .addCase:active {
   background-color: #f3231c;
@@ -70,8 +70,8 @@
 }
 
 /* Main heading for inside page */
-.inside-page__heading { 
-  padding-bottom: 1rem; 
+.inside-page__heading {
+  padding-bottom: 1rem;
   width: 100%;
 }
 
@@ -83,28 +83,33 @@
   font-size: 1.3rem;
   font-weight: 800;
   margin-top: .2rem;
-  
+
 }
 
 .inside-page__heading--city,
-.card-front__text-view--city { 
-    color: #584e53; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap:1.3rem;
+.card-front__text-view--city {
+  color: #584e53;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.3rem;
 }
-.view__case{
-    position: absolute;
-    top: 27rem;
-    border: 2px solid #584e53;
-    outline: none;
-    border-radius: 5px;
-    padding: 6px 10px;
+
+.view__case {
+  position: absolute;
+  top: 27rem;
+  border: 2px solid #584e53;
+  outline: none;
+  border-radius: 5px;
+  padding: 6px 10px;
 }
+
 /* Front cover */
 
-.card-front__tp { color: #fafbfa; }
+.card-front__tp {
+  color: #fafbfa;
+}
+
 /* 
 For pricing text on card front cover
 .card-front__text-price {
@@ -115,12 +120,13 @@ For pricing text on card front cover
 /* Back cover */
 
 .CaseDescriptionCntr {
-  max-height: 20rem;
+  max-height: 15rem;
   overflow: scroll;
   scrollbar-width: none;
 }
 
 .CluePrsnBtnCntr {
+  padding: 2px;
   position: absolute;
   bottom: 2vh;
 }
@@ -160,7 +166,7 @@ For pricing text on card front cover
   z-index: 10;
 }
 
-.inside-page__btn::before { 
+.inside-page__btn::before {
   content: "";
   height: 100%;
   left: 0;
@@ -172,21 +178,21 @@ For pricing text on card front cover
   z-index: -1;
 }
 
-.inside-page__btn--city { 
+.inside-page__btn--city {
   border-color: #6f676b;
   color: #514b4e;
 }
 
-.inside-page__btn--city::before { 
+.inside-page__btn--city::before {
   background-color: #615a5d;
 }
 
 
-.inside-page__btn:hover { 
+.inside-page__btn:hover {
   color: #fafbfa;
 }
 
-.inside-page__btn:hover::before { 
+.inside-page__btn:hover::before {
   transform: scaleY(1);
 }
 
@@ -214,14 +220,14 @@ For pricing text on card front cover
   /* background-color: #42a4ff; */
   justify-content: space-around;
   flex-wrap: wrap;
-  gap:3rem;
+  gap: 3rem;
   width: 100%;
 }
 
 /* A container to hold the flip card and the inside page */
 .card {
-  background-color: rgba(0,0,0, .05);
-  box-shadow: -.1rem 1.7rem 6.6rem -3.2rem rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, .05);
+  box-shadow: -.1rem 1.7rem 6.6rem -3.2rem rgba(0, 0, 0, 0.5);
   height: 35rem;
   position: relative;
   transition: all 1s ease;
@@ -244,7 +250,7 @@ For pricing text on card front cover
 
 /* The outer container's visibility is set to hidden. This is to make everything within the container NOT set to hidden  */
 /* This is done so content in the inside page can be selected */
-.flip-card > * {
+.flip-card>* {
   visibility: visible;
 }
 
@@ -294,11 +300,9 @@ For pricing text on card front cover
 }
 
 .card-front__tp--city {
-    background: linear-gradient(
-        to bottom,
-        #656569,
-        #404042
-      );
+  background: linear-gradient(to bottom,
+      #656569,
+      #404042);
 }
 
 /* Front card's bottom section */
@@ -333,7 +337,7 @@ For pricing text on card front cover
 
 .inside-page {
   background-color: #ebc489;
-  box-shadow: inset 25rem 0px 5rem -2.5rem rgba(0,0,0,0.25);
+  box-shadow: inset 25rem 0px 5rem -2.5rem rgba(0, 0, 0, 0.25);
   height: 100%;
   padding: 1rem;
   position: absolute;
@@ -348,7 +352,7 @@ For pricing text on card front cover
   display: flex;
   flex-direction: column;
   height: 100%;
-  text-align: center; 
+  text-align: center;
   width: 100%;
 }
 
@@ -357,7 +361,7 @@ For pricing text on card front cover
 /* This is to keep the card centered (within its container) when opened */
 .card:hover {
   box-shadow:
-  -.1rem 1.7rem 6.6rem -3.2rem rgba(0,0,0,0.75);
+    -.1rem 1.7rem 6.6rem -3.2rem rgba(0, 0, 0, 0.75);
   width: 25rem;
 }
 
@@ -368,19 +372,19 @@ For pricing text on card front cover
 
 /* When the card is hovered, the shadow on the inside page will shrink to the left */
 .card:hover .inside-page {
-  box-shadow: inset 1rem 0px 5rem -2.5rem rgba(0,0,0,0.1);
+  box-shadow: inset 1rem 0px 5rem -2.5rem rgba(0, 0, 0, 0.1);
 }
 
 .CaseEDButtons {
-	display: flex;
-	/* align-items: center; */
+  display: flex;
+  /* align-items: center; */
   width: 100%;
-	justify-content: space-evenly;
+  justify-content: space-evenly;
 }
 
 .CaseEDButtons button {
-	background-color: transparent;
-	border: none;
-	font-size: 2.0em;
-	cursor: pointer;
+  background-color: transparent;
+  border: none;
+  font-size: 2.0em;
+  cursor: pointer;
 }
