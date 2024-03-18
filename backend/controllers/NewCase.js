@@ -112,3 +112,22 @@ exports.deleteCase = async (req, res) => {
     }
 
 }
+
+exports.searchCase = async(req, res) => {
+    try{
+    const { date } = req.query; // Assuming date is provided as a query parameter
+    console.log(date);
+    // Construct a query to find cases created on the specified date
+    const cases = await Case.find({
+      createdAt: {
+        $gte: new Date(date), // Greater than or equal to the start of the specified date
+        $lt: new Date(new Date(date).setDate(new Date(date).getDate() + 1)) // Less than the start of the next day
+      }
+    });
+    console.log(cases);
+    res.json({data: cases});
+  } catch (error) {
+    console.error('Error searching for cases by date:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+}
