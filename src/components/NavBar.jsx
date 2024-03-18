@@ -11,8 +11,8 @@ export default function NavBar() {
     return (
         <div className="navbar">
             <div className="imgContainerNav">
-            <img src={logo} alt="TheMindMap" />
-            <span class="leftWelcome">Welcome, <strong>{user.name}</strong></span>
+                <img src={logo} alt="TheMindMap" />
+                <span class="leftWelcome">Welcome, <strong>{user.name}</strong></span>
             </div>
             {/* <form>
             <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="srch" aria-hidden="true"><path d="m19 19-3.5-3.5">
