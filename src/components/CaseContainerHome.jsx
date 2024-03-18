@@ -95,7 +95,7 @@ export default function CaseContainerHome(props) {
                                     >
                                         People Tracker
                                     </button>
-                                    <button onClick={() => navigate("/timeline", { state: { id: props.id} })}>TimeLine</button>
+                                   
                                 </div>
 
                             </div>
