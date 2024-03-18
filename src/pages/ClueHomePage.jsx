@@ -37,8 +37,11 @@ export default function ClueHomePage() {
                 >
                     Add Clue
                 </button>
-                <input type="date" value={date} onChange={(e) => setDate(e.target.value)} />
+                <div className="searchSection">
+                    <input type="date" value={date} onChange={(e) => setDate(e.target.value)} />
                 <button onClick={()=>{navigate("/searchClue", { state: { id:id, date: date } })}}>Search</button>
+                </div>
+                
                 {clueData?.data.length === 0 ? (<h1>No clue found</h1>) : clueData?.data.map((element) => (
     <ClueCard
         key={element._id} // Assuming _id is the unique identifier for each clue

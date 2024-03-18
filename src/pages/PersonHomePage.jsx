@@ -34,8 +34,11 @@ export default function PersonHomePage() {
                 >
                     Add Person
                 </button>
-                <input type="date" value={date} onChange={(e) => setDate(e.target.value)} />
+                <div className="searchSection">
+                    <input type="date" value={date} onChange={(e) => setDate(e.target.value)} />
                 <button onClick={() => { navigate("/searchPerson", { state: { id: id, date: date } }) }}>Search</button>
+                </div>
+                
                 {personData?.data.length === 0 ? (<h1>No Person found</h1>) : personData?.data.map((element) => (
                     <PersonCard caseId={id} id={element} name={element.name} description={element.description} profession={element.profession} image={element.image} time={element.
                         createdAt} />
