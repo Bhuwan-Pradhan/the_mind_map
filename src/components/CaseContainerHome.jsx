@@ -68,6 +68,7 @@ export default function CaseContainerHome(props) {
                                     <div className="CaseEDButtons">
                                         <button onClick={() => navigate("/updateCase", { state: { id: props.id, uName: props.name, uImage: props.image, uPlace: props.place, uDescription: props.description } })}><FontAwesomeIcon icon={faPenToSquare} /></button>
                                         <button onClick={() => { dispatch(deleteCase(token, props.id._id)) }}><FontAwesomeIcon icon={faTrashCan} /></button>
+                                        <button onClick={() => navigate("/timeline", { state: { id: props.id} })}>TimeLine</button>
                                     </div>
                                 </div>
                             </div>
