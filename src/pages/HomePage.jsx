@@ -28,8 +28,10 @@ export default function HomePage() {
             <div className="AddCaseBtnCntr">
                 <a href="/addCase" className="addCase" >Add Case</a>
             </div>
+            <div className="searchSection">
             <input type="date" value={date} onChange={(e) => setDate(e.target.value)} />
             <button onClick={() => { navigate("/searchCase", { state: { date: date } }) }}>Search</button>
+            </div>
             {caseData?.data.length === 0 ? (<h1>No case found</h1>) : caseData?.data.map((element) => (
                 <div>
                     <CaseContainerHome id={element} name={element.name} description={element.description} place={element.place} image={element.image} time={element.

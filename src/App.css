@@ -51,3 +51,24 @@ body{
 .checkbox:checked + .checkbox-label .ball {
   transform: translateX(35px);
 }
+.searchSection{
+  /* background-color: red; */
+  display: flex;
+  justify-content: center;
+  height: 5vh;
+  input{
+    height: 4vh;
+    margin-top: 1vh;
+    border-radius: 7px;
+    border: 1px solid black;
+  }
+  button{
+    height: 4vh;
+    margin-top: 1vh;
+    margin-left: 1vw;
+    width:4vw;
+    background-color: #7DD3FC;
+    border: none;
+    border-radius: 8px;
+  }
+}
