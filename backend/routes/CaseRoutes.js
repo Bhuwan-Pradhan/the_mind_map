@@ -23,7 +23,8 @@ const {
 const {
     getCaseById,
     getClueById,
-    getPersonById
+    getPersonById,
+    getClueAndPersonById
 } = require("../controllers/GetAll");
 
 
@@ -45,5 +46,6 @@ router.post("/getPerson", getPersonById);
 router.get("/searchCase", searchCase);
 router.get("/searchClue", searchClue);
 router.get("/searchPerson", searchPerson);
+router.get("/getTimeline", getClueAndPersonById);
 
 module.exports = router

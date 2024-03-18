@@ -62,6 +62,7 @@ export default function CaseContainerHome(props) {
                                     <img class="img__container" src={props.image} alt="" />
                                     <button onClick={() => navigate("/updateCase", { state: { id: props.id, uName: props.name, uImage: props.image, uPlace: props.place, uDescription: props.description } })}>update</button>
                                     <button onClick={() => { dispatch(deleteCase(token, props.id._id)) }}>delete</button>
+                                    <button onClick={() => navigate("/timeline", { state: { id: props.id} })}>TimeLine</button>
                                 </div>
                             </div>
                         </div>
