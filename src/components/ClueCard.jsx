@@ -3,8 +3,10 @@ import "../css/componentsCss/ClueCard.css"
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteClue } from '../services/caseApi';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import {faPenToSquare } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faPenToSquare } from '@fortawesome/free-solid-svg-icons';
+import {faTrashCan } from '@fortawesome/free-regular-svg-icons';
+
 
 
 const ClueCard = (props) => {
@@ -47,8 +49,11 @@ const ClueCard = (props) => {
       {props.description}</div>
     <div class="ClueCategory">{props.category}</div>
     <div class="ClueDate">{indianTimeString}</div>
-    <button onClick={() => navigate("/updateClue", { state: { caseId:props.caseId, id: props.id, uName: props.name, uImage: props.image, uCategory: props.category, uDescription: props.description } })}>update</button>
-    <button onClick={() => { dispatch(deleteClue(token, props.id._id, props.caseId._id)) }}>delete</button>
+    <div className="ClueEDButtons">
+      <button onClick={() => navigate("/updateClue", { state: { caseId:props.caseId, id: props.id, uName: props.name, uImage: props.image, uCategory: props.category, uDescription: props.description } })}><FontAwesomeIcon icon={faPenToSquare} /></button>
+      <button onClick={() => { dispatch(deleteClue(token, props.id._id, props.caseId._id)) }}><FontAwesomeIcon icon={faTrashCan} /></button>
+    </div>
+    
   </div>
   );
 };
