@@ -4,4 +4,13 @@
 }
 body{
   background-color: #f5f5f5;
+  /* background-color: #0F172A; */
+}
+.dark{
+  background-color: #0F172A;
+}
+.themebutton{
+  position: fixed;
+  left:1vw;
+  top:3vh;
 }
