@@ -17,7 +17,9 @@ import UpdatePerson from "./components/UpdatePerson";
 import SearchedCluePage from "./components/SearchedCluePage";
 import SearchedCasePage from "./components/SearchedCasePage";
 import SearchedPersonPage from "./components/SearchedPersonPage";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {faSun} from '@fortawesome/free-regular-svg-icons';
+import {faMoon} from '@fortawesome/free-regular-svg-icons';
 
 function App() {
   const { token } = useSelector((state) => state.auth);
@@ -75,7 +77,15 @@ function App() {
   if (token) {
     return (
       <div className="App">
-        <button className="themebutton" onClick={changetheme}>Change</button>
+        {/* <button className="themebutton" onClick={changetheme}>Change</button> */}
+        <div className="themebutton">
+  <input type="checkbox" class="checkbox" id="checkbox" onClick={changetheme}/>
+  <label for="checkbox" class="checkbox-label">
+  <FontAwesomeIcon icon={faMoon} />
+      <FontAwesomeIcon icon={faSun} />
+    <span class="ball"></span>
+  </label>
+</div>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/signup" element={<Signup />} />
