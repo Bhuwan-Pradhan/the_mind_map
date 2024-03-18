@@ -29,8 +29,8 @@ export default function TLLeft(props) {
     return (
         <div className="TLContainer left">
             <div className="TLContent">
-                <h3>{indianTimeString}</h3>
-                <h5>{props.data.name}</h5>
+                <h4>{indianTimeString}</h4>
+                <h3>{props.data.name}</h3>
                 <p>{props.data.description}</p>
             </div>
         </div>

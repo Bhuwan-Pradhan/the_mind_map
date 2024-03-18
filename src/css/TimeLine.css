@@ -131,14 +131,14 @@
 
 /* Place the container to the left */
 .left {
-  width: max-content;
+  width: 100%;
   position: relative;
   right: 50%;
 }
 
 /* Place the container to the right */
 .right {
-  width: max-content;
+  width: 100%;
   position: relative;
   left: 50%;
 }
@@ -182,6 +182,14 @@
   background-color: white;
   position: relative;
   border-radius: 6px;
+  max-width: 40vw;
+  max-height: 45vh;
+}
+
+.TLContent p {
+  max-height: 30vh;
+  overflow: auto;
+  scrollbar-width: none;
 }
 
 /* Media queries - Responsive timeline on screens less than 600px wide */
@@ -203,6 +211,15 @@
     padding-left: 70px;
     padding-right: 25px;
   }
+.TLContent {
+  max-height: 45vh;
+  width: 100%;
+}
+
+.TLContent p {
+  max-height: 30vh;
+}
+
 
   /* Make sure that all arrows are pointing leftwards */
   .TLContainer::before {
@@ -221,5 +238,9 @@
   /* Make all right containers behave like the left ones */
   .right {
     left: 0%;
+    width: 100%;
+  }
+  .left {
+    left: 0%
   }
 }
