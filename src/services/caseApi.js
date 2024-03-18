@@ -129,7 +129,6 @@ export function newPerson(id, formData, token, navigate) {
 export const getCaseClue = async (caseId) => {
   let result = null
   try {
-    console.log(caseId);
     const response = await apiConnector("POST", GETCLUE_API, { caseId })
     if (!response?.data?.success) {
       throw new Error("Could Not Fetch clues")
@@ -146,7 +145,6 @@ export const getCaseClue = async (caseId) => {
 export const getCasePerson = async (caseId) => {
   let result = null
   try {
-    console.log(caseId);
     const response = await apiConnector("POST", GETPERSON_API, { caseId })
     if (!response?.data?.success) {
       throw new Error("Could Not Fetch person")

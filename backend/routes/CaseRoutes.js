@@ -5,22 +5,26 @@ const router = express.Router();
 const {
     addCase,
     updateCase,
-    deleteCase
+    deleteCase,
+    searchCase
 } = require("../controllers/NewCase");
 const {
     addClue,
     updateClue,
-    deleteClue
+    deleteClue,
+    searchClue
 } = require("../controllers/NewClue");
 const {
     addPerson,
     updatePerson,
-    deletePerson
+    deletePerson,
+    searchPerson
 } = require("../controllers/NewPerson");
 const {
     getCaseById,
     getClueById,
-    getPersonById
+    getPersonById,
+    getClueAndPersonById
 } = require("../controllers/GetAll");
 
 
@@ -39,5 +43,9 @@ router.post("/deletePerson",auth, deletePerson);
 router.get("/getCase", auth, getCaseById);
 router.post("/getClue", getClueById);
 router.post("/getPerson", getPersonById);
+router.get("/searchCase", searchCase);
+router.get("/searchClue", searchClue);
+router.get("/searchPerson", searchPerson);
+router.get("/getTimeline", getClueAndPersonById);
 
 module.exports = router

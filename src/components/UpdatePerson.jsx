@@ -68,31 +68,31 @@ export default function UpdatePerson() {
                 <div className="CaseContainer">
                     <div className="CaseWriteContainer">
                         <label>
-                            <div className="CaseFormInputTitle">Enter Case Name *</div>
+                            <div className="CaseFormInputTitle">Update Case Name *</div>
                             <input
                                 required
                                 type="text"
                                 name="name"
-                                placeholder="Enter case name"
+                                placeholder="Enter updated name"
                                 value={name}
                                 onChange={handleOnChange}
                             />
                         </label>
 
                         <label>
-                            <div className="PersonFormInputTitle">Enter occupation / role</div>
+                            <div className="PersonFormInputTitle">Update occupation / role</div>
                             <input
                                 required
                                 type="text"
                                 name="profession"
-                                placeholder="Enter occupation/role"
+                                placeholder="Enter updated occupation/role"
                                 value={profession}
                                 onChange={handleOnChange}
                             />
                         </label>
 
                         <label>
-                            <div className="PersonFormInputTitle">Enter Details of Interaction</div>
+                            <div className="PersonFormInputTitle">Update Details of Interaction</div>
                             <textarea
                                 className="CaseDescriptionBox"
                                 name="description"
@@ -105,7 +105,7 @@ export default function UpdatePerson() {
 
 
                     <div id="CaseUploadContainer">
-                        <label className="CaseFormInputTitle">Upload Image:</label>
+                        <label className="CaseFormInputTitle">Update Image:</label>
                         <div {...getRootProps()} id="CaseDropzone">
                             <input {...getInputProps()} />
                             <p>Drag & drop an image here, or click to select one</p>
@@ -118,7 +118,7 @@ export default function UpdatePerson() {
                         </div>
                     </div>
                     <div className="CaseContainerButton">
-                        <button type="submit">Submit</button>
+                        <button type="submit">Update</button>
                     </div>
                 </div>
             </form>

@@ -18,7 +18,7 @@ exports.getCaseById = async (req, res) => {
 
 exports.getClueById = async (req, res) => {
     try {
-        const {caseId}  = req.body;
+        const { caseId } = req.body;
         const clueData = await Clue.find({ case: caseId }).populate('case').sort({ createdAt: -1 }).exec();
         res.json({ success: true, data: clueData, });
     }
@@ -31,7 +31,7 @@ exports.getClueById = async (req, res) => {
 }
 exports.getPersonById = async (req, res) => {
     try {
-        const {caseId}  = req.body;
+        const { caseId } = req.body;
         const personData = await Person.find({ case: caseId }).populate('case').sort({ createdAt: -1 }).exec();
         res.json({ success: true, data: personData, });
     }
@@ -42,3 +42,22 @@ exports.getPersonById = async (req, res) => {
         })
     }
 }
+
+
+exports.getClueAndPersonById = async (req, res) => {
+    try {
+        const { caseId } = req.query;
+        // Fetch clue and person data
+        const clueData = await Clue.find({ case: caseId }).populate('case').sort({ createdAt: -1 }).exec();
+        const personData = await Person.find({ case: caseId }).populate('case').sort({ createdAt: -1 }).exec();
+        // Merge clue and person data into one array
+        const mergedData = [...clueData, ...personData];
+
+        res.json({ success: true, data: mergedData });
+    } catch (err) {
+        return res.status(400).json({
+            error: "Error while getting Clue and Person data",
+            message: err.message
+        });
+    }
+};

@@ -14,6 +14,9 @@ import TimeLine from "./pages/TimeLine";
 import UpdateCase from "./components/UpdateCase";
 import UpdateClue from "./components/UpdateClue";
 import UpdatePerson from "./components/UpdatePerson";
+import SearchedCluePage from "./components/SearchedCluePage";
+import SearchedCasePage from "./components/SearchedCasePage";
+import SearchedPersonPage from "./components/SearchedPersonPage";
 
 
 function App() {
@@ -87,6 +90,9 @@ function App() {
           <Route path="/updateCase" element={<UpdateCase />} />
           <Route path="/updateClue" element={<UpdateClue />} />
           <Route path="/updatePerson" element={<UpdatePerson />} />
+          <Route path="/searchCase" element={<SearchedCasePage />} />
+          <Route path="/searchClue" element={<SearchedCluePage />} />
+          <Route path="/searchPerson" element={<SearchedPersonPage />} />
         </Routes>
       </div>
     );
