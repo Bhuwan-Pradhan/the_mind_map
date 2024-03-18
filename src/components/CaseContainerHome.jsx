@@ -3,6 +3,11 @@ import { useNavigate } from "react-router-dom";
 import "../css/componentsCss/CaseContainerHome.css";
 import { deleteCase } from "../services/caseApi";
 import { useDispatch, useSelector } from "react-redux";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faPenToSquare } from '@fortawesome/free-solid-svg-icons';
+import {faTrashCan } from '@fortawesome/free-regular-svg-icons';
+
+
 export default function CaseContainerHome(props) {
     const dispatch = useDispatch();
     const { token } = useSelector((state) => state.auth);
@@ -60,9 +65,10 @@ export default function CaseContainerHome(props) {
                                 </div>
                                 <div class="card-back">
                                     <img class="img__container" src={props.image} alt="" />
-                                    <button onClick={() => navigate("/updateCase", { state: { id: props.id, uName: props.name, uImage: props.image, uPlace: props.place, uDescription: props.description } })}>update</button>
-                                    <button onClick={() => { dispatch(deleteCase(token, props.id._id)) }}>delete</button>
-                                    <button onClick={() => navigate("/timeline", { state: { id: props.id} })}>TimeLine</button>
+                                    <div className="CaseEDButtons">
+                                        <button onClick={() => navigate("/updateCase", { state: { id: props.id, uName: props.name, uImage: props.image, uPlace: props.place, uDescription: props.description } })}><FontAwesomeIcon icon={faPenToSquare} /></button>
+                                        <button onClick={() => { dispatch(deleteCase(token, props.id._id)) }}><FontAwesomeIcon icon={faTrashCan} /></button>
+                                    </div>
                                 </div>
                             </div>
                         </div>

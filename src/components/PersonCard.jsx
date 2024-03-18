@@ -3,6 +3,10 @@ import "../css/componentsCss/PersonCard.css"
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { deletePerson } from '../services/caseApi';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faPenToSquare } from '@fortawesome/free-solid-svg-icons';
+import {faTrashCan } from '@fortawesome/free-regular-svg-icons';
+
 
 const PersonCard = (props) => {
     const dispatch = useDispatch();
@@ -50,8 +54,10 @@ const PersonCard = (props) => {
                 <div class="InContent">
                     <p>{props.description}</p>
                 </div>
-                <button onClick={() => navigate("/updatePerson", { state: { caseId: props.caseId, id: props.id, uName: props.name, uImage: props.image, uProfession: props.profession, uDescription: props.description } })}>update</button>
-                <button onClick={() => { dispatch(deletePerson(token, props.id._id, props.caseId._id)) }}>delete</button>
+                <div className="PersonEDButtons">
+                    <button onClick={() => navigate("/updatePerson", { state: { caseId: props.caseId, id: props.id, uName: props.name, uImage: props.image, uProfession: props.profession, uDescription: props.description } })}><FontAwesomeIcon icon={faPenToSquare} /></button>
+                    <button onClick={() => { dispatch(deletePerson(token, props.id._id, props.caseId._id)) }}><FontAwesomeIcon icon={faTrashCan} /></button>
+                </div>
             </div>
 
         </div>

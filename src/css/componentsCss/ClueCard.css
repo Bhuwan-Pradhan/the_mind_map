@@ -112,3 +112,15 @@
   background-color: #f3231c;
 }
 
+.ClueEDButtons {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+.ClueEDButtons button {
+	background-color: transparent;
+	border: none;
+	font-size: 2.0em;
+	cursor: pointer;
+}
