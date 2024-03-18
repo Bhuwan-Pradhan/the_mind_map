@@ -67,24 +67,24 @@ export default function UpdateCase() {
                 <div className="CaseContainer">
                     <div className="CaseWriteContainer">
                         <label>
-                            <div className="CaseFormInputTitle">Enter Case Name *</div>
+                            <div className="CaseFormInputTitle">Update Case Name *</div>
                             <input
                                 required
                                 type="text"
                                 name="name"
-                                placeholder="Enter case name"
+                                placeholder="Enter updated name"
                                 value={name}
                                 onChange={handleOnChange}
                             />
                         </label>
 
                         <label>
-                            <div className="CaseFormInputTitle">Enter Case Description *</div>
+                            <div className="CaseFormInputTitle">Update Case Description *</div>
 
                             <textarea
                                 className="CaseDescriptionBox"
                                 name="description"
-                                placeholder="Enter case description"
+                                placeholder="Enter updated description"
                                 value={description}
                                 onChange={handleOnChange}
                             >
@@ -93,7 +93,7 @@ export default function UpdateCase() {
                             {/* </div> */}
                         </label>
                         <label>
-                            <div className="CaseFormInputTitle">Enter Place *</div>
+                            <div className="CaseFormInputTitle">Update Place *</div>
 
                             <input
                                 required
@@ -110,7 +110,7 @@ export default function UpdateCase() {
 
 
                     <div id="CaseUploadContainer">
-                        <label className="CaseFormInputTitle">Upload Image:</label>
+                        <label className="CaseFormInputTitle">Upload Updated Image:</label>
                         <div {...getRootProps()} id="CaseDropzone">
                             <input {...getInputProps()} />
                             <p>Drag & drop an image here, or click to select one</p>
@@ -123,7 +123,7 @@ export default function UpdateCase() {
                         </div>
                     </div>
                     <div className="CaseContainerButton">
-                        <button type="submit">Submit</button>
+                        <button type="submit">Update</button>
                     </div>
                 </div>
             </form>
