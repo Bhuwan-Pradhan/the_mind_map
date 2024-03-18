@@ -10,6 +10,7 @@ export default function PersonHomePage() {
     const navigate = useNavigate();
     const location = useLocation();
     const { id } = location.state;
+    const [date, setDate] = useState('');
     const [personData, setPersonData] = useState();
     const getAllData = async () => {
         try {
@@ -33,7 +34,9 @@ export default function PersonHomePage() {
                 >
                     Add Person
                 </button>
-                {personData?.data.map((element) => (
+                <input type="date" value={date} onChange={(e) => setDate(e.target.value)} />
+                <button onClick={() => { navigate("/searchPerson", { state: { id: id, date: date } }) }}>Search</button>
+                {personData?.data.length === 0 ? (<h1>No Person found</h1>) : personData?.data.map((element) => (
                     <PersonCard caseId={id} id={element} name={element.name} description={element.description} profession={element.profession} image={element.image} time={element.
                         createdAt} />
                 ))}
